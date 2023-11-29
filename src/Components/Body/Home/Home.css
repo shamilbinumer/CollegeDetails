@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Kanit:wght@300&family=Poppins&display=swap');
+/* font-family: 'Josefin Sans', sans-serif;
+font-family: 'Kanit', sans-serif;
+font-family: 'Poppins', sans-serif; */
+
+body{
+    font-family: 'Poppins', sans-serif; 
+}
+.home-main{
+    display: flex;
+    background: rgb(254, 233, 171);
+}
+.home-main-left{
+    width: 60%;
+    padding-top: 12%;
+    padding-left: 10%;
+}
+.clg-name{
+    /* background-color: black; */
+    padding: 40px;
+    border-left: 3px solid rgb(98, 61, 0);
+}
+.home-main-right{
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+.home-main-left,.home-main-right{
+    height: 92vh;
+}
+.home-main-left h1{
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: 50px;
+    color: rgb(98, 61, 0);
+    margin-bottom: 40px;
+}
+.home-contctus-btn,.home-aboutus-btn{
+    text-decoration: none;
+    color: rgb(98, 61, 0);
+    padding: 9px 20px;
+    margin-right: 20px;
+    border: 2px solid rgb(98, 61, 0);
+    border-radius: 40px;
+    transition: .3s;
+}
+.home-aboutus-btn:hover{
+    background-color: rgb(98, 61, 0);
+    color: white;
+}
+.home-contctus-btn:hover{
+    background-color: rgb(98, 61, 0);
+    color: white;
+}
+
+.home-actype-main-card{
+   border: 3px solid  rgb(98, 61, 0);
+   border-radius: 10px;
+    height: 200px;
+    text-align: center;
+    padding: 20px;
+    width: 400px;
+}
+.home-actype-main-card h3{
+    color: rgb(98, 61, 0);
+    font-weight: 700;
+}
+.home-btns{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.home-admin-btn,.home-staff-btn{
+    background-color: rgb(98, 61, 0);
+    margin-bottom: 10px !important;
+    padding: 7px 60px;
+    border: 2px solid rgb(98, 61, 0);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.home-admin-btn:hover{
+    background-color: transparent;
+    color: rgb(98, 61, 0);
+}
+.home-staff-btn:hover{
+    background-color: transparent;
+    color: rgb(98, 61, 0);
+}
+.home-staff-btn{
+    padding: 7px 68px;
+}
