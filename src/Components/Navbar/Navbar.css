@@ -1,9 +1,9 @@
 .navbar{
-    background-color: rgb(254, 233, 171);
+    background-color: #2e3047;
   
 }
 .nav-link{
-    color: rgb(98, 61, 0);
+    color: #53d3d1 !important;
     font-weight: 600;
     letter-spacing: 1px;
 }

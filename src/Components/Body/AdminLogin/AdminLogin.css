@@ -1,5 +1,5 @@
 .adminlogin-main{
-    background: rgb(254, 233, 171);
+    background: #2e3047;
     height: 92vh;
     padding-top: 9%;
 }
@@ -7,8 +7,8 @@
     text-align: center;
 }
 .adminlogin-card{
-    /* border: 2px solid rgb(98, 61, 0); */
-    background-color:rgb(255, 216, 152) ;
+    border: 2px solid #53d3d1;
+    /* background-color:rgb(255, 255, 255) ; */
     width: 30%;
     height: auto;
     margin: auto;
@@ -16,16 +16,23 @@
     padding: 20px;
 }
 .adminlogin-card h4{
-    color: rgb(98, 61, 0);
+    color: #53d3d1;
     font-weight: 800;
 }
 .admin-login-form{
     /* background-color: red; */
     text-align: center;
 }
+.reg-btn{
+    padding-top: 30px;
+}
+.regbtn{
+    color: white;
+    text-decoration: none;
+}
 .admin-login-form input{
-    background-color: transparent;
-    border: 2px solid rgb(98, 61, 0) ;
+    background-color: transparent !important;
+    border: 2px solid #53d3d1 !important;
     margin-top: 20px;
     width: 60%;
     height: 40px;
@@ -33,10 +40,11 @@
     border-radius: 5px;
 }
 .adminlogin-card button{
-    background-color: rgb(98, 61, 0);
-    border: 2px solid rgb(98, 61, 0) ;
-    color: white;
+    background-color: #53d3d1;
+    border: 2px solid #53d3d1 ;
+    color: #2e3047;
     margin-top: 20px;
+    font-weight: 700;
     padding: 5px 16px;
     border-radius: 5px;
 }

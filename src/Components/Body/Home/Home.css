@@ -8,7 +8,7 @@ body{
 }
 .home-main{
     display: flex;
-    background: rgb(254, 233, 171);
+    background: #2e3047;
 }
 .home-main-left{
     width: 60%;
@@ -18,7 +18,7 @@ body{
 .clg-name{
     /* background-color: black; */
     padding: 40px;
-    border-left: 3px solid rgb(98, 61, 0);
+    border-left: 3px solid #53d3d1;
 }
 .home-main-right{
     width: 40%;
@@ -32,29 +32,31 @@ body{
     font-weight: 900;
     letter-spacing: 2px;
     font-size: 50px;
-    color: rgb(98, 61, 0);
+    color: #53d3d1;
     margin-bottom: 40px;
 }
 .home-contctus-btn,.home-aboutus-btn{
     text-decoration: none;
-    color: rgb(98, 61, 0);
+    color: #53d3d1;
     padding: 9px 20px;
     margin-right: 20px;
-    border: 2px solid rgb(98, 61, 0);
+    border: 2px solid #53d3d1;
     border-radius: 40px;
     transition: .3s;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 .home-aboutus-btn:hover{
-    background-color: rgb(98, 61, 0);
-    color: white;
+    background-color: #53d3d1;
+    color: #2e3047;
 }
 .home-contctus-btn:hover{
-    background-color: rgb(98, 61, 0);
-    color: white;
+    background-color: #53d3d1;
+    color: #2e3047;
 }
 
 .home-actype-main-card{
-   border: 3px solid  rgb(98, 61, 0);
+   border: 3px solid  #53d3d1;
    border-radius: 10px;
     height: 200px;
     text-align: center;
@@ -62,7 +64,7 @@ body{
     width: 400px;
 }
 .home-actype-main-card h3{
-    color: rgb(98, 61, 0);
+    color: #53d3d1;
     font-weight: 700;
 }
 .home-btns{
@@ -70,21 +72,22 @@ body{
     margin-top: 30px;
 }
 .home-admin-btn,.home-staff-btn{
-    background-color: rgb(98, 61, 0);
+    background-color: #53d3d1;
     margin-bottom: 10px !important;
     padding: 7px 60px;
-    border: 2px solid rgb(98, 61, 0);
-    color: white;
+    border: 2px solid #53d3d1;
+    color: #2e3047;
+    font-weight: 700;
     text-decoration: none;
     border-radius: 4px;
 }
 .home-admin-btn:hover{
     background-color: transparent;
-    color: rgb(98, 61, 0);
+    color: #53d3d1;
 }
 .home-staff-btn:hover{
     background-color: transparent;
-    color: rgb(98, 61, 0);
+    color: #53d3d1;
 }
 .home-staff-btn{
     padding: 7px 68px;

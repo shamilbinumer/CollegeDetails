@@ -10,7 +10,7 @@ app.use(express.json());
 app.use("/college",router);
 connection().then(()=>{
     app.listen(process.env.PORT,()=>{
-        console.log("server started",process.env.PORT);
+        console.log("server started","at port number",process.env.PORT);
     })
 })
 .catch((error)=>{
