@@ -1,20 +1,37 @@
 import React, { useState } from 'react'
 import './AdminLogin.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const AdminLogin = () => {
-const [val,setVal]=useState({
-  username:"",
-  password:""
-})
+  const navigate=useNavigate()
+const [username,setUsername]=useState('')
+const [password,setPassword]=useState('')
 
-const Getdata=(e)=>{ 
-  setVal((pre)=>({...pre,[e.target.name]:e.target.value}))
-  console.log(val);
-}
 
-const Login=()=>{
 
+// const Getdata=(e)=>{ 
+//   setUsername((pre)=>({...pre,[e.target.name]:e.target.value}))
+//   console.log(val);
+// }
+
+const Login=async(e)=>{
+  e.preventDefault()
+  try {
+    const res=await axios.post("http://localhost:3041/college/adminlogin",{
+      username:username,
+      password:password
+    })
+    const data=res.data;
+    console.log(data);
+    if(res.status!==404){
+      const token=data.token
+      localStorage.setItem("token",JSON.stringify(token))
+      navigate("/adminhome",{state:{username}})
+    }
+  } catch (error) {
+    alert("cant't Login",error)
+  }
 }
 
   return (
@@ -23,9 +40,9 @@ const Login=()=>{
         <div className="adminlogin-card">
             <div className="admin-reg-card-heading"><h4>Admin Login</h4></div>
           <form action="" className='admin-reg-form'> 
-            <div><input type="text" placeholder='Username' name='username' onChange={Getdata} /></div>
-            <div><input type="password"  placeholder='Password' name='password' onChange={Getdata}/></div>
-            <button onClick={Login}>Login</button>
+            <div><input type="text" placeholder='Username' name='username' onChange={(e)=>setUsername(e.target.value)} /></div>
+            <div><input type="password"  placeholder='Password' name='password' onChange={(e)=>setPassword(e.target.value)}/></div>
+            <button onClick={Login} >Login</button>
             <div className='reg-btn'><Link to='/adminregister' className='regbtn'>Back</Link></div>
             </form>
         </div>

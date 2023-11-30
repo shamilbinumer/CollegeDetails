@@ -1,5 +1,5 @@
 .stafflogin-main{
-    background: rgb(254, 233, 171);
+    background: #2e3047;
     height: 92vh;
     padding-top: 9%;
 }
@@ -7,8 +7,8 @@
     text-align: center;
 }
 .stafflogin-card{
-    /* border: 2px solid rgb(98, 61, 0); */
-    background-color:rgb(255, 216, 152) ;
+    border: 2px solid #53d3d1;
+    background-color:#2e3047 ;
     width: 30%;
     height: auto;
     margin: auto;
@@ -16,7 +16,7 @@
     padding: 20px;
 }
 .stafflogin-card h4{
-    color: rgb(98, 61, 0);
+    color: #53d3d1;
     font-weight: 800;
 }
 .staff-login-form{
@@ -25,7 +25,7 @@
 }
 .staff-login-form input{
     background-color: transparent;
-    border: 2px solid rgb(98, 61, 0) ;
+    border: 2px solid #53d3d1 ;
     margin-top: 20px;
     width: 60%;
     height: 40px;
@@ -33,9 +33,9 @@
     border-radius: 5px;
 }
 .stafflogin-card button{
-    background-color: rgb(98, 61, 0);
-    border: 2px solid rgb(98, 61, 0) ;
-    color: white;
+    background-color: #53d3d1;
+    border: 2px solid #53d3d1;
+    color: #2e3047;
     margin-top: 20px;
     padding: 5px 16px;
     border-radius: 5px;

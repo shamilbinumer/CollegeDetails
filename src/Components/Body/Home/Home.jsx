@@ -19,7 +19,8 @@ const Home = () => {
         <div className="home-actype-main-card">
           <h3>Account Type</h3>
           <div className='home-btns'><Link className="home-admin-btn" to='/adminregister'>Admin</Link></div>
-          <div><Link className="home-staff-btn" to='/stafflogin'>Staff</Link></div>
+          <div className='home-btns'><Link className="home-staff-btn" to='/stafflogin'>Staff</Link></div>
+          <div><Link className="home-student-btn" to='/studentreg'>Student</Link></div>
         </div>
       </div>
     </div>

@@ -58,9 +58,10 @@ body{
 .home-actype-main-card{
    border: 3px solid  #53d3d1;
    border-radius: 10px;
-    height: 200px;
+    height: auto;
     text-align: center;
     padding: 20px;
+    padding-bottom: 40px;
     width: 400px;
 }
 .home-actype-main-card h3{
@@ -71,13 +72,14 @@ body{
     margin-bottom: 30px;
     margin-top: 30px;
 }
-.home-admin-btn,.home-staff-btn{
+.home-admin-btn,.home-staff-btn,.home-student-btn{
     background-color: #53d3d1;
     margin-bottom: 10px !important;
     padding: 7px 60px;
     border: 2px solid #53d3d1;
     color: #2e3047;
     font-weight: 700;
+    width: 80%;
     text-decoration: none;
     border-radius: 4px;
 }
@@ -89,6 +91,7 @@ body{
     background-color: transparent;
     color: #53d3d1;
 }
-.home-staff-btn{
-    padding: 7px 68px;
+.home-student-btn:hover{
+    background-color: transparent;
+    color: #53d3d1;
 }

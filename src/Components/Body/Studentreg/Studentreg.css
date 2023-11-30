@@ -1,13 +1,13 @@
-.staffreg-main{
+.studentreg-main{
     background: #2e3047;
     height: 92vh;
     padding-top: 9%;
 }
-.staff-reg-card-heading{
+.student-reg-card-heading{
     text-align: center;
 }
-.staffreg-card{
-    /* border: 2px solid rgb(98, 61, 0); */
+.studentreg-card{
+    border: 2px solid #53d3d1;
     background-color:#2e3047 ;
     width: 30%;
     height: auto;
@@ -15,24 +15,24 @@
     border-radius: 8px;
     padding: 20px;
 }
-.staffreg-card h4{
+.studentreg-card h4{
     color: #53d3d1;
     font-weight: 800;
 }
-.staff-reg-form{
+.student-reg-form{
     /* background-color: red; */
     text-align: center;
 }
-.staff-reg-form input{
+.student-reg-form input{
     background-color: transparent;
-    border: 2px solid #53d3d1 ;
+    border: 2px solid #53d3d1 !important ;
     margin-top: 20px;
     width: 60%;
     height: 40px;
     padding-left: 10px;
     border-radius: 5px;
 }
-.staffreg-card button{
+.studentreg-card button{
     background-color: #53d3d1;
     border: 2px solid #53d3d1 ;
     color: white;
@@ -40,7 +40,7 @@
     padding: 5px 16px;
     border-radius: 5px;
 }
-.staff-reg-ihave-ac{
+.student-reg-ihave-ac{
     text-align: center;
     margin-top: 20px;
 }
