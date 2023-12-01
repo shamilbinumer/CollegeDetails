@@ -1,6 +1,7 @@
 import React from 'react'
 import './Adminhome.css'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const Adminhome = () => {
     const location=useLocation()
@@ -9,6 +10,7 @@ const Adminhome = () => {
     <div>
       <div className="adminhome-main">
         <h3>Admin : {username}</h3>
+        <Link to='/staffreg'>Register staff</Link>
       </div>
     </div>
   )

@@ -43,7 +43,7 @@ const Login=async(e)=>{
             <div><input type="text" placeholder='Username' name='username' onChange={(e)=>setUsername(e.target.value)} /></div>
             <div><input type="password"  placeholder='Password' name='password' onChange={(e)=>setPassword(e.target.value)}/></div>
             <button onClick={Login} >Login</button>
-            <div className='reg-btn'><Link to='/adminregister' className='regbtn'>Back</Link></div>
+            <div className='reg-btn'><Link to='/adminregister' className='regbtn'>Register</Link></div>
             </form>
         </div>
       </div>

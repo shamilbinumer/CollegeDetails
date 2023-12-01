@@ -54,6 +54,25 @@ export async function adminLogin(req, res) {
 
 
 export async function addStaff(req,res){
-    const {name,username,password}=req.body
-    res.status(201).send(staff_schema.create({name,username,password}));
+    try {
+        const {admin,empid,name,username,password,conformpassword,email,designation,salary,expirience,address,photo}=req.body;
+        console.log(admin,empid,name,username,password,conformpassword,email,designation,salary,expirience,address,photo);
+        if(!(admin&&empid&&name&&username&&password&&conformpassword&&email&&designation&&salary&&expirience&&address&&photo))
+        return res.status(404).send("fields are empty")
+    
+        bcrypt.hash(password,10)    
+        .then((hashedPwd)=>{
+            staff_schema.create({admin,empid,name,username,password:hashedPwd,conformpassword,email,designation,salary,expirience,address,photo});
+        })
+        .then(()=>{
+            res.status(201).send("sucessfully registered")
+        })
+      .catch((error)=>{
+        res.status(500).send(error)
+       })
+        
+       } catch (error) {
+        console.log(error);
+    
+    }
 }

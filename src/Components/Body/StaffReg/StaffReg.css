@@ -1,15 +1,15 @@
 .staffreg-main{
     background: #2e3047;
     height: 92vh;
-    padding-top: 9%;
+    padding-top: 1%;
 }
 .staff-reg-card-heading{
     text-align: center;
 }
 .staffreg-card{
-    /* border: 2px solid rgb(98, 61, 0); */
+    /* border: 2px solid #53d3d1; */
     background-color:#2e3047 ;
-    width: 30%;
+    width: 70%;
     height: auto;
     margin: auto;
     border-radius: 8px;
@@ -27,8 +27,11 @@
     background-color: transparent;
     border: 2px solid #53d3d1 ;
     margin-top: 20px;
-    width: 60%;
+    width: 30%;
+    margin-right: 10px;
     height: 40px;
+    color: white;
+    padding: 10px;
     padding-left: 10px;
     border-radius: 5px;
 }
@@ -43,4 +46,8 @@
 .staff-reg-ihave-ac{
     text-align: center;
     margin-top: 20px;
+}
+.file{
+    border: none !important;
+    color: white;
 }
