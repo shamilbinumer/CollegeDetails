@@ -1,0 +1,54 @@
+.allstafflist-heading{
+    text-align: center;
+    color: #53d3d1;
+}
+.list-of-staffs{
+    padding-top: 70px;
+}
+.staff-card{
+    height: auto;
+    width: 90%;
+    /* background-color: yellow; */
+    border: 2px solid #53d3d144;
+    border-radius: 7px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.staff-dp{
+    margin: auto;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.385);
+    overflow: hidden;
+}
+.staff-dp img{
+    width: 100%;
+  
+}
+.card-heading{
+    color: #53d3d1;
+    text-align: center;
+    margin-top: 20px;
+}
+.allstaff-delete-view-btns{
+    text-align: center;
+    padding-top:30px;
+}
+.allstaff-view-btn{
+    text-decoration: none;
+    background-color: #53d3d1;
+    color: #2e3047;
+    padding: 7px 20px;
+    font-weight: 800;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+.allstaff-delete-btn{
+    text-decoration: none;
+    background-color: #53d3d1;
+    color: #2e3047;
+    padding: 7px 20px;
+    font-weight: 800;
+    border-radius: 5px;
+}

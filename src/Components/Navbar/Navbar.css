@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Kanit:wght@300&family=Poppins&family=Satisfy&display=swap');
 .navbar{
     background-color: #2e3047;
   
+}
+.navbar-brand{
+    margin-right: 34%;
+    color: #53d3d1;
+    font-family: 'Satisfy', cursive;
+    font-weight: 900;
+    letter-spacing: 7px;
 }
 .nav-link{
     color: #53d3d1 !important;
     font-weight: 600;
     letter-spacing: 1px;
+  
 }

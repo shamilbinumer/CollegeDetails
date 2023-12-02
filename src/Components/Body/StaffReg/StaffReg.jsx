@@ -60,7 +60,7 @@ const StaffReg = () => {
     }
    try {
     const res=await axios.post("http://localhost:3041/college/addstaff",{...val,photo:Photo})
-    console.log(res);
+    console.log(res.data);
    
     if(res.status!=201){
       alert("Data Not Added")

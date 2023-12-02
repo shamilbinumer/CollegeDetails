@@ -100,3 +100,8 @@ export async function staffLogin(req, res) {
 }
 }
 
+export async function getFullstaff(req,res){
+    let task=await staff_schema.find()
+    res.status(200).send(task)
+}
+
