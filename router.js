@@ -8,6 +8,7 @@ router.route("/stafflogin").post(controller.staffLogin);
 router.route("/getfullstaff").get(controller.getFullstaff);
 router.route("/getDetails/:id").post(controller.getfullDetails);
 router.route("/deletestaff/:id").delete(controller.deleteStaff);
+router.route("/editstaff/:id").patch(controller.editStaff);
 
 
 export default router;

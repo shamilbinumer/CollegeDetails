@@ -28,6 +28,7 @@
     border: 2px solid #53d3d1 ;
     margin-top: 20px;
     width: 60%;
+    color: #53d3d1;
     height: 40px;
     padding-left: 10px;
     border-radius: 5px;
@@ -38,6 +39,7 @@
     color: #2e3047;
     margin-top: 20px;
     padding: 5px 16px;
+    font-weight: 800;
     border-radius: 5px;
 }
 .staff-login-ihave-ac{

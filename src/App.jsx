@@ -11,8 +11,9 @@ import Adminhome from './Components/Body/Adminhome/Adminhome'
 import Studentreg from './Components/Body/Studentreg/Studentreg'
 import Studentlogin from './Components/Body/Studentlogin/Studentlogin'
 import Staffhome from './Components/Body/Staffhome/Staffhome'
-import Allstafflist from './Components/Allstafflist/Allstafflist'
-import Staffdetails from './Components/Staffdetails/Staffdetails'
+import Allstafflist from './Components/Body/Allstafflist/Allstafflist'
+import Staffedit from './Components/Body/StaffEdit/Staffedit'
+import Staffdetails from './Components/Body/Staffdetails/Staffdetails'
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
       <Route path='/staffhome' Component={Staffhome}/>
       <Route path='/allstafflist' Component={Allstafflist}/>
       <Route path='/staffdetails/:id' Component={Staffdetails}/>
+
+      <Route path='/staffedit/:id' Component={Staffedit}/>
     </Routes>
     
     </BrowserRouter>

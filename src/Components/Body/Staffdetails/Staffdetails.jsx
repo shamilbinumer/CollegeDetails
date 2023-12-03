@@ -28,7 +28,7 @@ useEffect(() => {
             <div className="staffdp"><img src={getStaff.photo} alt="" /></div>
             <h3 className='staffdetails-name'>{getStaff.name}</h3>
             <p className='staffdetails-email'><i className="fa fa-envelope" aria-hidden="true"></i>{getStaff.email}</p>
-            <Link className='staffdetails-edit-btn'>Edit</Link>
+            <Link className='staffdetails-edit-btn' to={`/staffedit/${id}`}>Edit</Link>
         </div>
         <div className="staffdetails-main-card-right">
           <table>

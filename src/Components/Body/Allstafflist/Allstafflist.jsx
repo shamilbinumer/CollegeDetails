@@ -48,6 +48,7 @@ const Allstafflist = () => {
                     <div className="staff-card" >
                     <div className="staff-dp"><img src={data.photo} alt="" /></div>
                     <h3 className='card-heading'>{data.name}</h3>
+                    <p className='card-para'>{data.email}</p>
                     {/* <p className='card-para'>{data.empid}</p> */}
                     <div className="allstaff-delete-view-btns">
                         {/* <Link className='allstaff-view-btn'>View</Link> */}

@@ -22,9 +22,10 @@
     text-decoration: none;
 }
 .card-para{
-    color: #53d3d1;
+    color: #faffff;
     text-align: center;
-
+    margin-top: 0 !important;
+    font-size: 12px;
 }
 .staff-dp{
     margin: auto;
@@ -42,6 +43,9 @@
     color: #53d3d1;
     text-align: center;
     margin-top: 20px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 0 !important;
     font-size: 20PX;
 }
 .allstaff-delete-view-btns{
