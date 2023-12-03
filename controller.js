@@ -105,3 +105,22 @@ export async function getFullstaff(req,res){
     res.status(200).send(task)
 }
 
+export async function getfullDetails(req,res){
+    const{id}=req.params;
+    console.log(id);
+    let task=await staff_schema.findOne({_id:id})
+    console.log(task);
+    res.status(200).send(task)
+}
+
+export function deleteStaff(req,res)
+{
+    const{id}=req.params;
+    const data=staff_schema.deleteOne({_id:id})
+    data.then((resp)=>{
+        res.status(200).send(resp)          
+    }).catch((error)=>{
+        res.status(404).send(error)
+    })
+}
+

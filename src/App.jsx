@@ -12,6 +12,7 @@ import Studentreg from './Components/Body/Studentreg/Studentreg'
 import Studentlogin from './Components/Body/Studentlogin/Studentlogin'
 import Staffhome from './Components/Body/Staffhome/Staffhome'
 import Allstafflist from './Components/Allstafflist/Allstafflist'
+import Staffdetails from './Components/Staffdetails/Staffdetails'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Route path='/studentlogin' Component={Studentlogin}/>
       <Route path='/staffhome' Component={Staffhome}/>
       <Route path='/allstafflist' Component={Allstafflist}/>
+      <Route path='/staffdetails/:id' Component={Staffdetails}/>
     </Routes>
     
     </BrowserRouter>

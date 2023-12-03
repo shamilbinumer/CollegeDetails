@@ -8,11 +8,23 @@
 .staff-card{
     height: auto;
     width: 90%;
+   transition: .2s;
     /* background-color: yellow; */
     border: 2px solid #53d3d144;
     border-radius: 7px;
     padding: 15px;
     margin-bottom: 20px;
+}
+.staff-card:hover{
+    transform: scale(1.04);
+}
+.card-link{
+    text-decoration: none;
+}
+.card-para{
+    color: #53d3d1;
+    text-align: center;
+
 }
 .staff-dp{
     margin: auto;
@@ -30,25 +42,17 @@
     color: #53d3d1;
     text-align: center;
     margin-top: 20px;
+    font-size: 20PX;
 }
 .allstaff-delete-view-btns{
     text-align: center;
     padding-top:30px;
 }
-.allstaff-view-btn{
-    text-decoration: none;
-    background-color: #53d3d1;
-    color: #2e3047;
-    padding: 7px 20px;
-    font-weight: 800;
-    border-radius: 5px;
-    margin-right: 20px;
-}
 .allstaff-delete-btn{
     text-decoration: none;
     background-color: #53d3d1;
     color: #2e3047;
-    padding: 7px 20px;
+    padding: 7px 98px;
     font-weight: 800;
     border-radius: 5px;
 }
