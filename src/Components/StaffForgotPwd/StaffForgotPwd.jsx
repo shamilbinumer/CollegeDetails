@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
 import './StaffForgotPwd.css'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 const StaffForgotPwd = () => {
     const [val,setVal]=useState({})
     const handlechange=(e)=>{
         setVal({[e.target.name]:e.target.value})
         console.log(val);
+    }
+    const editPwd=async(e)=>{
+        e.preventDefault()
+        
     }
   return (
     <div>
@@ -22,7 +27,7 @@ const StaffForgotPwd = () => {
           <div>
             <input type="password" placeholder='New password'name='password' onChange={handlechange} />
           </div>
-          <button>Change Password</button>
+          <button onClick={editPwd}>Change Password</button>
           <p></p>
           <div>
             <Link className='stf-frgt-usr' to='/stafflogin'>Back</Link>
