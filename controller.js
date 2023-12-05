@@ -150,6 +150,5 @@ export async function staffFrgtPwd(req, res) {
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(updatedPassword, saltRounds);
     let task = await staff_schema.updateOne({ phone }, { $set: { password: hashedPassword } });
-    
     res.status(200).send(task);
 }

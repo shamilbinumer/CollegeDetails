@@ -3,7 +3,10 @@
     background-color: #2e3047;
   
 }
-.navbar-brand{
+.navbar-brand img{
+    width: 5%;
+}
+.navbar-brand {
     margin-right: 34%;
     color: #53d3d1;
     text-shadow:0px 0px 10px #53d3d1,
