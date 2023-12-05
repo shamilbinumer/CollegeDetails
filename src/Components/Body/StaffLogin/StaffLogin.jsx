@@ -16,12 +16,15 @@ const StaffLogin = () => {
         username:username,
         password:password
       })
+      console.log(res.status);
       const data=res.data;
       console.log(data);
-      if(res.status!==404){
-        const staff_token=data.token
-        localStorage.setItem("token",JSON.stringify(staff_token))
-        navigate("/staffhome",{state:{username}})
+      if (res.status !== 404) {
+        const staff_token = data.token;
+        // const staff_username = data.username;
+        localStorage.setItem("token", JSON.stringify(staff_token));
+        localStorage.setItem("username", JSON.stringify(username));
+        navigate("/staffhome");
       }
     } catch (error) {
       alert("cant't Login",error)

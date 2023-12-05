@@ -18,7 +18,12 @@ const StaffForgotPwd = () => {
           const res=await axios.patch(`http://localhost:3041/college/forgotepwd/${val.phone}`,{
         password:val.password
       })
-      console.log(res.data);
+      if(res.status===200){
+        alert("Password Changed")
+      }
+      console.log(res.status);
+    }else{
+      alert("Username and Password does not match")
     }
         }
     

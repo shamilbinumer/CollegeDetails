@@ -15,6 +15,34 @@
     border-radius: 8px;
     padding: 20px;
 }
+.mmm{
+   /* background-color: #53d3d1; */
+   display: flex;
+   justify-content: right;
+   padding-right: 50px;
+}
+.admin-logout span{
+    color: #53d3d1;
+    padding: 0;
+}
+.admin-logout{
+    padding: 4px;
+    width: 14%;
+    height: 40px;
+    border-radius: 40px;
+    /* background-color: #53d3d1; */
+    border: 2px solid #53d3d1;
+    margin-bottom: 10px;
+}
+.admin-logout button{
+    margin-left: 29px;
+    padding: 2px 7px;
+    background-color: #53d3d1;
+    color: #2e3047;
+    font-weight: 800;
+    border-radius: 40px;
+    border: 1px solid #53d3d1;
+}
 .staffreg-card h4{
     color: #53d3d1;
     font-weight: 800;

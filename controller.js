@@ -96,7 +96,8 @@ export async function staffLogin(req, res) {
      res.end();
      
     } catch (error) {
-     console.log(error); 
+     console.log(error);
+
 }
 }
 

@@ -5,6 +5,7 @@ import axios from 'axios';
 // import { useLocation } from 'react-router-dom';
 
 const StaffReg = () => {
+  
   const [username, setUsername] = useState("");
   useEffect(() => {
     const storedUsername = localStorage.getItem("username");
@@ -87,8 +88,10 @@ const StaffReg = () => {
 
   return (
     <div>
+       <div className="mmm"><div className="admin-logout"><span><i className="fa fa-user" aria-hidden="true"></i>{username}</span><button>Logout</button> </div></div>
        <div className="staffreg-main">
         <div className="staffreg-card">
+        
             <div className="staff-reg-card-heading"><h4>Staff Register</h4></div>
           <form action="" className='staff-reg-form'> 
           <div>
