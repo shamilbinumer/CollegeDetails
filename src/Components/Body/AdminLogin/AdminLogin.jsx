@@ -27,6 +27,7 @@ const Login=async(e)=>{
     if(res.status!==404){
       const token=data.token
       localStorage.setItem("token",JSON.stringify(token))
+      localStorage.setItem("username", JSON.stringify(username));
       navigate("/adminhome",{state:{username}})
     }
   } catch (error) {

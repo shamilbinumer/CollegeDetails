@@ -57,6 +57,7 @@
     background-color: #53d3d1;
     color: #2e3047;
     padding: 7px 98px;
+    /* width: 90% !important; */
     font-weight: 800;
     border-radius: 5px;
 }

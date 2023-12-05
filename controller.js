@@ -135,3 +135,22 @@ export async function editStaff(req, res) {
     }
 }
 
+export async function forgotUsername(req,res){
+    const phone=req.params;
+    console.log(phone);
+    let task=await staff_schema.findOne(phone)
+    console.log(task);
+    res.status(200).send(task)
+}
+
+export async function staffFrgtPwd(req, res) {
+    const phone = req.params;
+    try {
+        const updatedData = req.body;
+        const value = await staff_schema.updateOne({phone:phone}, { $set: updatedData });
+        res.status(200).send(value);
+    } catch (error) {
+        res.status(404).send(error);
+    }
+}
+

@@ -1,8 +1,10 @@
 import React from 'react'
 import './Navbar.css'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Navbar = () => {
+  const location=useLocation()
+  const username = location.state && location.state.username;
   return (
     <div>
      <nav className="navbar navbar-expand-lg">
@@ -27,7 +29,9 @@ const Navbar = () => {
         <a className="nav-link active" aria-current="page" href="#">Contact Us</a>
         </li>
       </ul>
+      <p className='nav-admin-name'><i className="fa fa-user" aria-hidden="true"></i>{username}</p>
     </div>
+    
   </div>
 </nav>
     </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {  useNavigate } from 'react-router-dom'
+import {  Link, useNavigate } from 'react-router-dom'
 import './StaffLogin.css'
 import axios from 'axios'
 
@@ -35,6 +35,10 @@ const StaffLogin = () => {
           <form action="" className='staff-login-form'> 
             <div><input type="text" placeholder='Username' onChange={(e)=>setUsername(e.target.value)}/></div>
             <div><input type="password"  placeholder='Password' onChange={(e)=>setPassword(e.target.value)}/></div>
+            <div className='forgot-pwd-div'>
+          <div><Link className='forgot-pwd' to='/staffforgotusername'>Forgot Username</Link></div>
+          <div><Link className='forgot-pwd' to='/staffforgotpwd'>Forgot Password</Link></div>
+              </div>
             <button onClick={Login}>Login</button>
             </form>
         </div>

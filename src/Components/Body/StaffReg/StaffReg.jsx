@@ -1,9 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 // import { Link } from 'react-router-dom'
 import './StaffReg.css'
 import axios from 'axios';
+// import { useLocation } from 'react-router-dom';
 
 const StaffReg = () => {
+  const [username, setUsername] = useState("");
+  useEffect(() => {
+    const storedUsername = localStorage.getItem("username");
+    if (storedUsername) {
+      setUsername(JSON.parse(storedUsername));
+    }
+  }, []);
   let Photo="";
   const [val,setVal]=useState({
     admin:"",
@@ -21,6 +29,7 @@ const StaffReg = () => {
     photo:""
   })
 
+  
   const Getdata=(e)=>{ 
     setVal((pre)=>({...pre,[e.target.name]:e.target.value}))
     console.log(val);
@@ -59,7 +68,7 @@ const StaffReg = () => {
       alert("Does not match the password")
     }
    try {
-    const res=await axios.post("http://localhost:3041/college/addstaff",{...val,photo:Photo})
+    const res=await axios.post("http://localhost:3041/college/addstaff",{...val,photo:Photo,admin:username})
     console.log(res.data);
    
     if(res.status!=201){
@@ -83,7 +92,7 @@ const StaffReg = () => {
             <div className="staff-reg-card-heading"><h4>Staff Register</h4></div>
           <form action="" className='staff-reg-form'> 
           <div>
-              <input type="text" placeholder='Admin' name='admin'  onChange={Getdata} />
+              {/* <input type="text" placeholder='Admin' name='admin' onChange={Getdata} /> */}
               <input type="text" placeholder='Emp id' onChange={Getdata} name='empid'/>
           </div>
           <div>

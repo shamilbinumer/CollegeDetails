@@ -46,3 +46,21 @@
     text-align: center;
     margin-top: 20px;
 }
+.forgot-pwd-div{
+    /* tex t-align: right; */
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    /* background-color: yellow; */
+    margin: auto;
+}
+.forgot-pwd{
+    font-size: 12px;
+    /* text-decoration: none; */
+    color: #53d3d1;
+    text-align: right;
+}
+.forgot-pwd:hover{
+    color: #53d3d1;
+}

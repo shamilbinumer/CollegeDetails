@@ -7,7 +7,7 @@ const Staffhome = () => {
   const username = location.state && location.state.username;
   return (
     <div>
-     <div className="staffhome-heading"><h5>Staff : {username}</h5></div>
+     {/* <div className="staffhome-heading"><h5>Staff : {username}</h5></div> */}
     </div>
   )
 }

@@ -6,7 +6,7 @@ import './Staffedit.css'
 const Staffedit = () => {
     const navigate=useNavigate()
     const {id}=useParams()
-    const [getStaff,setStaff]=useState([])
+    // const [getStaff,setStaff]=useState([])
     let Photo="";
   const [val,setVal]=useState({
     admin:"",

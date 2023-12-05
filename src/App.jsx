@@ -14,6 +14,8 @@ import Staffhome from './Components/Body/Staffhome/Staffhome'
 import Allstafflist from './Components/Body/Allstafflist/Allstafflist'
 import Staffedit from './Components/Body/StaffEdit/Staffedit'
 import Staffdetails from './Components/Body/Staffdetails/Staffdetails'
+import StaffForgotusername from './Components/staffForgoteusername/StaffForgotusername'
+import StaffForgotPwd from './Components/StaffForgotPwd/StaffForgotPwd'
 
 function App() {
   return (
@@ -33,8 +35,9 @@ function App() {
       <Route path='/staffhome' Component={Staffhome}/>
       <Route path='/allstafflist' Component={Allstafflist}/>
       <Route path='/staffdetails/:id' Component={Staffdetails}/>
-
+      <Route path='/staffforgotusername' Component={StaffForgotusername}/>
       <Route path='/staffedit/:id' Component={Staffedit}/>
+      <Route path='/staffforgotpwd' Component={StaffForgotPwd}/>
     </Routes>
     
     </BrowserRouter>
