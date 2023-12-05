@@ -143,27 +143,6 @@ export async function forgotUsername(req,res){
     res.status(200).send(task)
 }
 
-// export async function staffFrgtPwd(req, res) {
-//     const phone = req.params.phone;
-//     try {
-//         // const updatedData = req.body;
-//         // console.log(phone.phone);
-//         const value = await staff_schema.findOne(phone)
-//         console.log(value);
-//         res.status(200).send(value);
-//     } catch (error) {
-//         res.status(404).send(error);
-//     }
-// }
-
-// export async function staffFrgtPwd(req,res){
-//     const phone=req.params.phone;
-//     const updatedData = req.body.password;
-//     console.log(phone);
-//     console.log(updatedData);
-//     let task=await staff_schema.updateOne({phone},{$set:{password:updatedData}})
-//     res.status(200).send(task)
-// }
 
 export async function staffFrgtPwd(req, res) {
     const phone = req.params.phone;
