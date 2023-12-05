@@ -156,11 +156,21 @@ export async function forgotUsername(req,res){
 //     }
 // }
 
-export async function staffFrgtPwd(req,res){
-    const phone=req.params.phone;
-    const updatedData = req.body.password;
-    console.log(phone);
-    console.log(updatedData);
-    let task=await staff_schema.updateOne({phone},{$set:{password:updatedData}})
-    res.status(200).send(task)
+// export async function staffFrgtPwd(req,res){
+//     const phone=req.params.phone;
+//     const updatedData = req.body.password;
+//     console.log(phone);
+//     console.log(updatedData);
+//     let task=await staff_schema.updateOne({phone},{$set:{password:updatedData}})
+//     res.status(200).send(task)
+// }
+
+export async function staffFrgtPwd(req, res) {
+    const phone = req.params.phone;
+    const updatedPassword = req.body.password;
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(updatedPassword, saltRounds);
+    let task = await staff_schema.updateOne({ phone }, { $set: { password: hashedPassword } });
+    
+    res.status(200).send(task);
 }
