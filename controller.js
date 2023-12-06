@@ -1,5 +1,6 @@
 import admin_schema from './admin.model.js'
 import staff_schema from './staff.model.js'
+import student_schema from './students.model.js'
 import bcrypt from 'bcrypt'
 import jsonwebtoken from 'jsonwebtoken'
 import pkg from "jsonwebtoken";
@@ -152,4 +153,28 @@ export async function staffFrgtPwd(req, res) {
     const hashedPassword = await bcrypt.hash(updatedPassword, saltRounds);
     let task = await staff_schema.updateOne({ phone }, { $set: { password: hashedPassword } });
     res.status(200).send(task);
+}
+
+export async function addStudent(req,res){
+    try {
+        console.log("hai",req.body);
+        const {staff,studentid,name,username,password,email,phone,address,dob,course,batch,sem,attandance,internalChe,internalPhy,internalMath,testChe,testPhy,testMath,photo}=req.body;
+        console.log(staff,studentid,name,username,password,email,phone,address,dob,course,batch,sem,attandance,internalChe,internalPhy,internalMath,testChe,testPhy,testMath,photo);
+        if(!(staff&&studentid&&name&&username&&password&&email&&phone&&address&&dob,course&&batch&&sem&&attandance&&internalChe&&internalPhy&&internalMath&&testChe&&testPhy&&testMath&&photo))
+        return res.status(404).send("fields are empty")
+        bcrypt.hash(password,10)    
+        .then((hashedPwd)=>{
+            student_schema.create({staff,studentid,name,username,password:hashedPwd,email,phone,address,dob,course,batch,sem,attandance,internalChe,internalPhy,internalMath,testChe,testPhy,testMath,photo});
+        })
+        .then(()=>{
+            res.status(201).send("sucessfully registered")
+        })
+      .catch((error)=>{
+        res.status(500).send(error)
+       })
+        
+       } catch (error) {
+        console.log(error);
+    
+    }
 }

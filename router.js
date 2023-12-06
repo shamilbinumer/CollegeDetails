@@ -11,6 +11,7 @@ router.route("/deletestaff/:id").delete(controller.deleteStaff);
 router.route("/editstaff/:id").patch(controller.editStaff);
 router.route("/getusername/:phone").get(controller.forgotUsername);
 router.route("/forgotepwd/:phone").patch(controller.staffFrgtPwd);
+router.route("/addstudent").post(controller.addStudent)
 
 
 export default router;

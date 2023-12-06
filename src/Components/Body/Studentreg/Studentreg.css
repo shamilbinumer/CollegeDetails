@@ -1,7 +1,7 @@
 .studentreg-main{
     background: #2e3047;
     height: 92vh;
-    padding-top: 9%;
+    padding-top: 3%;
 }
 .student-reg-card-heading{
     text-align: center;
@@ -9,7 +9,7 @@
 .studentreg-card{
     border: 2px solid #53d3d1;
     background-color:#2e3047 ;
-    width: 30%;
+    width: 70%;
     height: auto;
     margin: auto;
     border-radius: 8px;
@@ -27,7 +27,23 @@
     background-color: transparent;
     border: 2px solid #53d3d1 !important ;
     margin-top: 20px;
-    width: 60%;
+    color: #53d3d1;
+    width: 40%;
+    margin-right: 10px;
+    height: 40px;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+.batch-sem-at{
+    width: 26.3% !important;
+}
+.student-reg-form select{
+    background-color: transparent;
+    border: 2px solid #53d3d1 !important ;
+    margin-top: 20px;
+    color: #53d3d1;
+    width: 40%;
+    margin-right: 10px;
     height: 40px;
     padding-left: 10px;
     border-radius: 5px;
@@ -35,12 +51,37 @@
 .studentreg-card button{
     background-color: #53d3d1;
     border: 2px solid #53d3d1 ;
-    color: white;
+    color: #2e3047;
+    font-weight: 800;
     margin-top: 20px;
     padding: 5px 16px;
     border-radius: 5px;
 }
-.student-reg-ihave-ac{
-    text-align: center;
-    margin-top: 20px;
+.internal{
+    text-align: start;
+    padding-left: 9%;
+    margin-top: 10px;
+    color: #53d3d1;
+}
+.sub-mark{
+    width: 10% !important;
+    margin-left: 4px;
+}
+label{
+    color: #53d3d1;
+}
+.address{
+    width: 81% !important;
+}
+.internal-mark{
+    height: 80px;
+    width: 81%;
+    border-radius: 5px;
+    /* margin-top: 20px !important; */
+    /* border: 2px solid #53d3d1; */
+    margin: auto;
+}
+.file{
+    border: 1px solid #2e3047 !important;
+    padding: 4px;
 }
