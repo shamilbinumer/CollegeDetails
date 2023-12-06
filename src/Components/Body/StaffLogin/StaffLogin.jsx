@@ -2,8 +2,21 @@ import React, { useState } from 'react'
 import {  Link, useNavigate } from 'react-router-dom'
 import './StaffLogin.css'
 import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const StaffLogin = () => {
+  const success = () =>
+  toast.success("You Are Succesfuly Logined",{
+   position: "top-right",
+   autoClose:2500 ,
+   hideProgressBar: false,
+   closeOnClick: true,
+   pauseOnHover: true, 
+   draggable: true,
+   progress: undefined, 
+   theme:"dark",
+ })
   const navigate=useNavigate()
   const [username,setUsername]=useState('')
   const [password,setPassword]=useState('')
@@ -24,7 +37,10 @@ const StaffLogin = () => {
         // const staff_username = data.username;
         localStorage.setItem("token", JSON.stringify(staff_token));
         localStorage.setItem("username", JSON.stringify(username));
-        navigate("/staffhome");
+        success();
+        setTimeout(()=>{
+          navigate("/staffhome");
+  },3000);
       }
     } catch (error) {
       alert("cant't Login",error)
@@ -43,6 +59,18 @@ const StaffLogin = () => {
           <div><Link className='forgot-pwd' to='/staffforgotpwd'>Forgot Password</Link></div>
               </div>
             <button onClick={Login}>Login</button>
+            <ToastContainer
+                            position="top-right"
+                            autoClose={5000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="dark"
+              />
             </form>
         </div>
       </div>

@@ -2,7 +2,23 @@ import React, { useEffect, useState } from 'react'
 import './Studentreg.css'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 const Studentreg = () => {
+  const success = () =>
+  toast.success("You Are Succesfuly Registered",{
+   position: "top-right",
+   autoClose:2500 ,
+   hideProgressBar: false,
+   closeOnClick: true,
+   pauseOnHover: true, 
+   draggable: true,
+   progress: undefined, 
+   theme:"dark",
+ })
   const navigate=useNavigate()
   const [username, setUsername] = useState("");
   useEffect(() => {
@@ -69,8 +85,10 @@ const Studentreg = () => {
     const res=await axios.post("http://localhost:3041/college/addstudent",{...val,photo:Photo,staff:username})
     console.log(res.data);
     if(res.status!==404){
-      navigate("/staffhome")
-      alert("Seccussfully registerd")
+      success();
+      setTimeout(()=>{
+        navigate("/staffhome");
+},3000);
      }
    } catch (error) {
     alert("error",error)
@@ -146,6 +164,18 @@ const Studentreg = () => {
               </div>
               <div className='stude-dp'><img src={val.photo} alt="" /></div>
             <button onClick={AddStudent}>Register</button>
+            <ToastContainer
+                            position="top-right"
+                            autoClose={5000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="dark"
+              />
             </form>
        
             {/* <div  className='admn-reg-ihave-ac'><Link to='/studentlogin'>I have an account</Link></div> */}
