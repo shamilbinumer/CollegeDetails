@@ -17,7 +17,7 @@ const ViewFullStudents = () => {
         getAllstud() 
     } ,[])
 
-    const deleteStaff = async (id) => {
+    const deleteStud = async (id) => {
         try {
           const confirmed = window.confirm("Are you sure you want to delete this staff member?");
       
@@ -47,7 +47,7 @@ const ViewFullStudents = () => {
          {/* <p className='card-para'>{data.empid}</p> */}
          <div className="allstuds-delete-view-btns">
              {/* <Link className='allstuds-view-btn'>View</Link> */}
-             <Link className='allstuds-delete-btn' to={`#${data._id}`} onClick={() => deleteStaff(data._id)}>Delete</Link>
+             <Link className='allstuds-delete-btn' to={`#${data._id}`} onClick={() => deleteStud(data._id)}>Delete</Link>
          </div>
      </div>
      </Link>
