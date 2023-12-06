@@ -16,6 +16,21 @@ const ViewFullStudents = () => {
       useEffect(()=>{
         getAllstud() 
     } ,[])
+
+    const deleteStaff = async (id) => {
+        try {
+          const confirmed = window.confirm("Are you sure you want to delete this staff member?");
+      
+          if (confirmed) {
+            const res = await axios.delete(`http://localhost:3041/college/deletestudent/${id}`);
+            console.log("deleted", res.data);
+            getAllstud();
+          } 
+        } catch (error) {
+          console.log(error);
+        }
+      };
+  
   return (
     <div>
       <div className="studentfulldetails-main container">
@@ -32,7 +47,7 @@ const ViewFullStudents = () => {
          {/* <p className='card-para'>{data.empid}</p> */}
          <div className="allstuds-delete-view-btns">
              {/* <Link className='allstuds-view-btn'>View</Link> */}
-             <Link className='allstuds-delete-btn'>Delete</Link>
+             <Link className='allstuds-delete-btn' to={`#${data._id}`} onClick={() => deleteStaff(data._id)}>Delete</Link>
          </div>
      </div>
      </Link>

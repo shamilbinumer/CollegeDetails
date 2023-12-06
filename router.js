@@ -13,6 +13,7 @@ router.route("/getusername/:phone").get(controller.forgotUsername);
 router.route("/forgotepwd/:phone").patch(controller.staffFrgtPwd);
 router.route("/addstudent").post(controller.addStudent)
 router.route("/getallstuds").get(controller.getStudents)
+router.route("/deletestudent/:id").delete(controller.deleteStudent);
 
 
 export default router;

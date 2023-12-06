@@ -182,3 +182,14 @@ export async function getStudents(req,res){
     let task=await student_schema.find()
     res.status(200).send(task)
 }
+
+export function deleteStudent(req,res)
+{
+    const{id}=req.params;
+    const data=student_schema.deleteOne({_id:id})
+    data.then((resp)=>{
+        res.status(200).send(resp)          
+    }).catch((error)=>{
+        res.status(404).send(error)
+    })
+}
