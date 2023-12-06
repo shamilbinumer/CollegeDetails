@@ -35,7 +35,7 @@ const StaffForgotusername = () => {
           <button onClick={getUsername}>Find username</button>
           <p>{usernameMessage}</p>
           <div>
-            <Link className='stf-frgt-usr' to='/stafflogin'>Back</Link> {/* Assuming you have a route for the 'Back' link */}
+            <Link className='stf-frgt-usr' to='/stafflogin'>Back</Link>
           </div>
         </div>
       </div>

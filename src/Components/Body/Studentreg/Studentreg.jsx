@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import './Studentreg.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 const Studentreg = () => {
-
+  const navigate=useNavigate()
   const [username, setUsername] = useState("");
   useEffect(() => {
     const storedUsername = localStorage.getItem("username");
@@ -69,6 +69,7 @@ const Studentreg = () => {
     const res=await axios.post("http://localhost:3041/college/addstudent",{...val,photo:Photo,staff:username})
     console.log(res.data);
     if(res.status!==404){
+      navigate("/staffhome")
       alert("Seccussfully registerd")
      }
    } catch (error) {
@@ -82,7 +83,7 @@ const Studentreg = () => {
   return (
     <div>
       {username}
-       <div className="studentreg-main">
+       <div className="studentreg-mainn">
         <div className="studentreg-card">
             <div className="student-reg-card-heading"><h4>Student Register</h4></div>
           <form action="" className='student-reg-form'> 
@@ -112,6 +113,7 @@ const Studentreg = () => {
               <input type="text" placeholder='Batch' className='batch-sem-at' name='batch' onChange={Getdata}/>
               {/* <input type="text" placeholder='Semester' className='batch-sem-at'/> */}
               <select name="sem" id="" className='batch-sem-at' onChange={Getdata}>
+              <option value="select sem">Select sem</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -142,6 +144,7 @@ const Studentreg = () => {
               <div>
                 <input type="file" className='file' name='photo' onChange={Upload} />
               </div>
+              <div className='stude-dp'><img src={val.photo} alt="" /></div>
             <button onClick={AddStudent}>Register</button>
             </form>
        

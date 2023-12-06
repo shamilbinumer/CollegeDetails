@@ -175,6 +175,10 @@ export async function addStudent(req,res){
         
        } catch (error) {
         console.log(error);
-    
     }
+}
+
+export async function getStudents(req,res){
+    let task=await student_schema.find()
+    res.status(200).send(task)
 }

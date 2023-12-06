@@ -12,6 +12,7 @@ router.route("/editstaff/:id").patch(controller.editStaff);
 router.route("/getusername/:phone").get(controller.forgotUsername);
 router.route("/forgotepwd/:phone").patch(controller.staffFrgtPwd);
 router.route("/addstudent").post(controller.addStudent)
+router.route("/getallstuds").get(controller.getStudents)
 
 
 export default router;
