@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Studentreg.css'
 import { Link } from 'react-router-dom'
+import axios from 'axios';
 const Studentreg = () => {
 
   const [username, setUsername] = useState("");
@@ -35,11 +36,48 @@ const Studentreg = () => {
     photo:""
   })
 
-  const Getdata=(e)=>{ 
-    console.log(e.target.value);
-    setVal((pre)=>({...pre,[e.target.name]:e.target.value}))
-    console.log(val);
+  function convertToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(file);
+  
+        fileReader.onload = () => {
+            resolve(fileReader.result)
+        }
+        fileReader.onerror = (error) => {
+            reject(error)
+        }
+    })
   }
+
+  const Upload=async(e)=>{
+    e.preventDefault()
+  
+    Photo=await convertToBase64(e.target.files[0])
+    console.log(Photo);
+  }
+
+  const Getdata=(e)=>{ 
+    // console.log(e.target.value);
+    setVal((pre)=>({...pre,[e.target.name]:e.target.value}))
+    // console.log(val);
+  }
+
+  const AddStudent=async(e)=>{
+    e.preventDefault()
+   try {
+    const res=await axios.post("http://localhost:3041/college/addstudent",{...val,photo:Photo,staff:username})
+    console.log(res.data);
+    if(res.status!==404){
+      alert("Seccussfully registerd")
+     }
+   } catch (error) {
+    alert("error",error)
+   }
+   
+    
+  }
+ 
 
   return (
     <div>
@@ -102,9 +140,9 @@ const Studentreg = () => {
                 <input type="text" className='sub-mark' name='testMath' onChange={Getdata}/>
               </div>
               <div>
-                <input type="file" className='file' name='photo' />
+                <input type="file" className='file' name='photo' onChange={Upload} />
               </div>
-            <button>Register</button>
+            <button onClick={AddStudent}>Register</button>
             </form>
        
             {/* <div  className='admn-reg-ihave-ac'><Link to='/studentlogin'>I have an account</Link></div> */}
