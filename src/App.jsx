@@ -24,7 +24,8 @@ function App() {
     <BrowserRouter>
     <Navbar/>
     <Routes>
-      <Route path='/' Component={Home}/>
+        
+      <Route path='/admin' Component={Home}/>
       <Route path='/adminlogin' Component={AdminLogin}/>
       <Route path='/stafflogin' Component={StaffLogin}/>
       <Route path='/staffreg' Component={StaffReg}/>

@@ -43,12 +43,16 @@ const Studentreg = () => {
     batch:"",
     sem:"",
     attandance:"",
-    internalChe:"",
-    internalPhy:"",
-    internalMath:"",
+    internal:{ 
+      internalChe:"",
+      internalPhy:"",
+      internalMath:""
+    },
+   test:{
     testChe:"",
     testPhy:"",
-    testMath:"",
+    testMath:""
+   },
     photo:""
   })
 
@@ -78,6 +82,16 @@ const Studentreg = () => {
     setVal((pre)=>({...pre,[e.target.name]:e.target.value}))
     // console.log(val);
   }
+
+
+  const GetTestmark = (e) => {
+    setVal((pre) => ({...pre,test: { ...pre.test, [e.target.name]: e.target.value },}));
+  };
+  
+
+  const GetInternalmark = (e) => {
+    setVal((pre) => ({...pre,internal: { ...pre.internal, [e.target.name]: e.target.value },}));
+  };
 
   const AddStudent=async(e)=>{
     e.preventDefault()
@@ -144,20 +158,20 @@ const Studentreg = () => {
              <div className="internal"><label htmlFor="">Internal Marks</label></div>
               <div className='internal-mark'>
                 <label htmlFor="">Chemistry : </label>
-                <input type="text" className='sub-mark' name='internalChe' onChange={Getdata}/>
+                <input type="text" className='sub-mark' name='internal' onChange={GetInternalmark}/>
                 <label htmlFor="">Physics : </label>
-                <input type="text" className='sub-mark' name='internalPhy' onChange={Getdata}/>
+                <input type="text" className='sub-mark' name='internal' onChange={GetInternalmark}/>
                 <label htmlFor="">Maths : </label>
-                <input type="text" className='sub-mark' name='internalMath' onChange={Getdata}/>
+                <input type="text" className='sub-mark' name='internal' onChange={GetInternalmark}/>
               </div>
               <div className="internal"><label htmlFor="">Test Score</label></div>
               <div className='internal-mark'>
                 <label htmlFor="">Chemistry : </label>
-                <input type="text" className='sub-mark' name='testChe' onChange={Getdata}/>
+                <input type="text" className='sub-mark' name='test' onChange={GetTestmark}/>
                 <label htmlFor="">Physics : </label>
-                <input type="text" className='sub-mark' name='testPhy' onChange={Getdata}/>
+                <input type="text" className='sub-mark' name='test' onChange={GetTestmark}/>
                 <label htmlFor="">Maths : </label>
-                <input type="text" className='sub-mark' name='testMath' onChange={Getdata}/>
+                <input type="text" className='sub-mark' name='test' onChange={GetTestmark}/>
               </div>
               <div>
                 <input type="file" className='file' name='photo' onChange={Upload} />
