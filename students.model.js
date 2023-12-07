@@ -13,12 +13,16 @@ const student_schema=new mongoose.Schema({
     batch:{type:String},
     sem:{type:String},
     attandance:{type:String},
-    internalChe:{type:String},
-    internalPhy:{type:String},
-    internalMath:{type:String},
-    testChe:{type:String},
-    testPhy:{type:String},
-    testMath:{type:String},
+    internal:{
+        internalChe:{type:String},
+        internalPhy:{type:String},
+        internalMath:{type:String}
+    },
+    test:{
+        testChe:{type:String},
+        testPhy:{type:String},
+        testMath:{type:String},
+   },
     photo:{type:String}
 })
 

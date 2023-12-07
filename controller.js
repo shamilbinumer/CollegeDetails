@@ -158,13 +158,13 @@ export async function staffFrgtPwd(req, res) {
 export async function addStudent(req,res){
     try {
         console.log("hai",req.body);
-        const {staff,studentid,name,username,password,email,phone,address,dob,course,batch,sem,attandance,internalChe,internalPhy,internalMath,testChe,testPhy,testMath,photo}=req.body;
-        console.log(staff,studentid,name,username,password,email,phone,address,dob,course,batch,sem,attandance,internalChe,internalPhy,internalMath,testChe,testPhy,testMath,photo);
-        if(!(staff&&studentid&&name&&username&&password&&email&&phone&&address&&dob,course&&batch&&sem&&attandance&&internalChe&&internalPhy&&internalMath&&testChe&&testPhy&&testMath&&photo))
+        const {staff,studentid,name,username,password,email,phone,address,dob,course,batch,sem,attandance,internal,test,photo}=req.body;
+        console.log(staff,studentid,name,username,password,email,phone,address,dob,course,batch,sem,attandance,internal,test,photo);
+        if(!(staff&&studentid&&name&&username&&password&&email&&phone&&address&&dob,course&&batch&&sem&&attandance&&internal&&test&&photo))
         return res.status(404).send("fields are empty")
         bcrypt.hash(password,10)    
         .then((hashedPwd)=>{
-            student_schema.create({staff,studentid,name,username,password:hashedPwd,email,phone,address,dob,course,batch,sem,attandance,internalChe,internalPhy,internalMath,testChe,testPhy,testMath,photo});
+            student_schema.create({staff,studentid,name,username,password:hashedPwd,email,phone,address,dob,course,batch,sem,attandance,internal,test,photo});
         })
         .then(()=>{
             res.status(201).send("sucessfully registered")
