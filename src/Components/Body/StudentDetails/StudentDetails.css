@@ -1,0 +1,59 @@
+.stud-details-main-card{
+    display: flex;
+    width: 50%;
+    min-height: 500px;
+    border: 2px solid #53d3d1;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 7px;
+    padding: 12px;
+}
+.stud-details-main-card-left{
+    /* background-color: white; */
+    width: 40%;
+    
+    height: 500px;
+    padding-top: 50px;
+}
+.stud-details-main-card-right{
+    padding: 0px 0px 0px 30px;
+    color: #53d3d1;
+    border-left: 2px solid #53d3d153;
+}
+.stud-dp{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: white;
+}
+.stud-name{
+    text-align: center;
+    color: #53d3d1;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+.stud-id{
+    text-align: center;
+    color: #53d3d1;
+    letter-spacing: 1px;
+}
+.stud-edit{
+    text-align: center;
+    padding-top: 180px;
+}
+.stud-edit-btn{
+    text-decoration: none;
+    background-color: #53d3d1;
+    color: #2e3047;
+    font-weight: 800;
+    padding: 7px 50px;
+}
+.stud-details-th{
+    height: 38px;
+    width: 170px;
+    letter-spacing: 1px;
+}
+.stud-details-td{
+    letter-spacing: 1px;
+}

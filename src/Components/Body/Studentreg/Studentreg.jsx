@@ -33,8 +33,6 @@ const Studentreg = () => {
     staff:"",
     studentid:"",
     name:"",
-    username:"",
-    password:"",
     email:"",
     phone:"",
     address:"",
@@ -123,10 +121,6 @@ const Studentreg = () => {
             <input type="text" placeholder='Student ID' name='studentid' onChange={Getdata}/>
             <input type="text" placeholder='Full Name' name='name' onChange={Getdata}/>
           </div>
-            <div>
-              <input type="text" placeholder='Username' name='username' onChange={Getdata}/>
-              <input type="password"  placeholder='Password' name='password' onChange={Getdata}/>
-              </div>
               <div>
               <input type="text" placeholder='E mail'  name='email' onChange={Getdata}/>
               <input type="password"  placeholder='Phone' name='phone' onChange={Getdata}/>
@@ -158,20 +152,20 @@ const Studentreg = () => {
              <div className="internal"><label htmlFor="">Internal Marks</label></div>
               <div className='internal-mark'>
                 <label htmlFor="">Chemistry : </label>
-                <input type="text" className='sub-mark' name='internal' onChange={GetInternalmark}/>
+                <input type="text" className='sub-mark' name='internalChe' onChange={GetInternalmark}/>
                 <label htmlFor="">Physics : </label>
-                <input type="text" className='sub-mark' name='internal' onChange={GetInternalmark}/>
+                <input type="text" className='sub-mark' name='internalPhy' onChange={GetInternalmark}/>
                 <label htmlFor="">Maths : </label>
-                <input type="text" className='sub-mark' name='internal' onChange={GetInternalmark}/>
+                <input type="text" className='sub-mark' name='internalMath' onChange={GetInternalmark}/>
               </div>
               <div className="internal"><label htmlFor="">Test Score</label></div>
               <div className='internal-mark'>
                 <label htmlFor="">Chemistry : </label>
-                <input type="text" className='sub-mark' name='test' onChange={GetTestmark}/>
+                <input type="text" className='sub-mark' name='testChe' onChange={GetTestmark}/>
                 <label htmlFor="">Physics : </label>
-                <input type="text" className='sub-mark' name='test' onChange={GetTestmark}/>
+                <input type="text" className='sub-mark' name='testPhy' onChange={GetTestmark}/>
                 <label htmlFor="">Maths : </label>
-                <input type="text" className='sub-mark' name='test' onChange={GetTestmark}/>
+                <input type="text" className='sub-mark' name='testMath' onChange={GetTestmark}/>
               </div>
               <div>
                 <input type="file" className='file' name='photo' onChange={Upload} />

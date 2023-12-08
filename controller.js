@@ -155,28 +155,21 @@ export async function staffFrgtPwd(req, res) {
     res.status(200).send(task);
 }
 
-export async function addStudent(req,res){
+
+export async function addStudent(req, res) {
     try {
-        console.log("hai",req.body);
-        const {staff,studentid,name,username,password,email,phone,address,dob,course,batch,sem,attandance,internal,test,photo}=req.body;
-        console.log(staff,studentid,name,username,password,email,phone,address,dob,course,batch,sem,attandance,internal,test,photo);
-        if(!(staff&&studentid&&name&&username&&password&&email&&phone&&address&&dob,course&&batch&&sem&&attandance&&internal&&test&&photo))
-        return res.status(404).send("fields are empty")
-        bcrypt.hash(password,10)    
-        .then((hashedPwd)=>{
-            student_schema.create({staff,studentid,name,username,password:hashedPwd,email,phone,address,dob,course,batch,sem,attandance,internal,test,photo});
-        })
-        .then(()=>{
-            res.status(201).send("sucessfully registered")
-        })
-      .catch((error)=>{
-        res.status(500).send(error)
-       })
-        
-       } catch (error) {
-        console.log(error);
+        console.log("hai", req.body);
+        const { ...studentDetails } = req.body;
+
+        await student_schema.create({ ...studentDetails }); 
+
+        res.status(201).send("Successfully registered");
+    } catch (error) {
+        console.error(error);
+        res.status(500).send(error.message || "Internal Server Error");
     }
 }
+
 
 export async function getStudents(req,res){
     let task=await student_schema.find()
@@ -192,4 +185,11 @@ export function deleteStudent(req,res)
     }).catch((error)=>{
         res.status(404).send(error)
     })
+}
+
+export async function getStudentDetails(req,res){
+    const{id}=req.params;
+    let task=await student_schema.findOne({_id:id})
+    console.log(task);
+    res.status(200).send(task)
 }

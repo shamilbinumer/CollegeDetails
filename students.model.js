@@ -3,8 +3,6 @@ const student_schema=new mongoose.Schema({
     staff:{type:String},
     studentid:{type:String},
     name:{type:String},
-    username:{type:String},
-    password:{type:String},
     email:{type:String},
     phone:{type:String},
     address:{type:String},

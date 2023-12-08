@@ -58,7 +58,7 @@ body{
 .home-actype-main-card{
    border: 3px solid  #53d3d1;
    border-radius: 10px;
-    height: auto;
+    /* height: auto; */
     text-align: center;
     padding: 20px;
     padding-bottom: 40px;

@@ -17,6 +17,7 @@ import Staffdetails from './Components/Body/Staffdetails/Staffdetails'
 import StaffForgotusername from './Components/staffForgoteusername/StaffForgotusername'
 import StaffForgotPwd from './Components/StaffForgotPwd/StaffForgotPwd'
 import ViewFullStudents from './Components/ViewFullStudents/ViewFullStudents'
+import StudentDetails from './Components/Body/StudentDetails/StudentDetails'
 
 function App() {
   return (
@@ -41,6 +42,8 @@ function App() {
       <Route path='/staffedit/:id' Component={Staffedit}/>
       <Route path='/staffforgotpwd' Component={StaffForgotPwd}/>
       <Route path='/viewfullstudents' Component={ViewFullStudents}/>
+      <Route path='/studentdetails/:id' Component={StudentDetails}/>
+
     </Routes>
     
     </BrowserRouter>

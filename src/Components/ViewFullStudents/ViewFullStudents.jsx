@@ -39,7 +39,7 @@ const ViewFullStudents = () => {
     {
         getStud.map((data,index)=>
         <div className="col-lg-3" key={index}>
-        <Link className='card-link' >
+        <Link className='card-link' to={`/studentdetails/${data._id}`}>
         <div className="stud-card" >
          <div className="stud-dp"><img src={data.photo} alt="" /></div>
          <h3 className='card-heading'>{data.name}</h3>
