@@ -123,7 +123,7 @@ const Studentreg = () => {
           </div>
               <div>
               <input type="text" placeholder='E mail'  name='email' onChange={Getdata}/>
-              <input type="password"  placeholder='Phone' name='phone' onChange={Getdata}/>
+              <input type="text"  placeholder='Phone' name='phone' onChange={Getdata}/>
               </div>
               <div><input type="text" placeholder='Address' className='address' name='address'onChange={Getdata} /></div>
             <div><input type="date" placeholder='Date Of Birth' name='dob' onChange={Getdata}/>

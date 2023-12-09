@@ -1,3 +1,24 @@
+body{
+  padding-top: 10px;
+}
+.staffhome-back-btn{
+  color: #2e3047;
+  background-color: #53d3d1;
+  /* margin-left: 10px; */
+  border-radius: 0px 20px 20px 0px;
+  font-weight: 800;
+  margin-top: 20px;
+  padding: 8px 20px;
+}
+.upper{
+  display: flex;
+}
+.upper-left{
+  padding-top: 10px;
+}
+.upper-left,.upper-right{
+  width: 50%;
+}
 .staffhome-heading{
     text-align: center;
     color: #53d3d1;
@@ -43,13 +64,79 @@
   .sign svg path {
     fill: white;
   }
+  .Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: #53d3d1;
+  }
+  
+  /* plus sign */
+  .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign svg {
+    width: 17px;
+  }
+  
+  .sign svg path {
+    fill: white;
+  }
   /* text */
   .text {
     position: absolute;
     right: 0%;
     width: 0%;
     opacity: 0;
-    color: white;
+    color: #2e3047;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+  }
+  /* hover effect on button width */
+  .Btn:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+  }
+  /* hover effect button's text */
+  .Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .Btn:active {
+    transform: translate(2px ,2px);
+  }
+  /* text */
+  .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: #2e3047 !important;
     font-size: 1.2em;
     font-weight: 600;
     transition-duration: .3s;
@@ -88,3 +175,19 @@
     border-radius: 5px;
     background-color: #53d3d1;
 }
+.admin-logoutt{
+  border: 2px solid #53d3d1;
+  display: flex;
+  border-radius: 30px;
+  padding: 5px;
+}
+.admin-logoutt .span{
+  padding-right: 10px;
+  padding-top: 10px;
+  color: #53d3d1;
+}
+
+
+
+
+

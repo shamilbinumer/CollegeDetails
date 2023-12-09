@@ -23,7 +23,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <Navbar/>
+    {/* <Navbar/> */}
     <Routes>
         
       <Route path='/admin' Component={Home}/>

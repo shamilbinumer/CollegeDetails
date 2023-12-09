@@ -4,41 +4,47 @@ import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 const StudentDetails = () => {
-    const {id}=useParams()
-    // console.log(id);
-    const [getStudent,setStudent]=useState([])
-    const [attentantace,setAttentantace]=useState()
-    const fullData=async()=>{
+    const { id } = useParams();
+    const [getStudent, setStudent] = useState([]);
+    const [attentantace, setAttentantace] = useState();
+
+    const fullData = async () => {
         try {
-            const res=await axios.post(`http://localhost:3041/college/getStudentdetails/${id}`)
-            setStudent(res.data)
-            console.log(getStudent);
+            const res = await axios.post(`http://localhost:3041/college/getStudentdetails/${id}`);
+            setStudent(res.data);
+            console.log(res.data); // Ensure data is present
+            getpersantage(); // Move this inside the 'then' block
         } catch (error) {
             console.log(error);
         }
     }
-    
+
     useEffect(() => {
         fullData(id);
-      }, [id]);  
+    }, [id]);
 
-     const getpersantage=()=>{
-        let pers = (getStudent.attendance / 200) * 100;
-        setAttentantace(pers)
-        console.log(attentantace);
+    const getpersantage = () => {
+     if (getStudent.attandance !== "" && getStudent.attandance !== undefined) {
+         let pers = (getStudent.attandance / 200) * 100;
+         setAttentantace(pers);
+         console.log(pers);
      }
+ };
+ 
+//     const internalChe=getStudent.internal.internalChe
+//     const internalPhy=getStudent.internal.internalPhy
+//     const internalMath=getStudent.internal.internalMath
 
-     useEffect(()=>{
-        getpersantage()
-     },[])
-
+//     const testPhy=getStudent.test.testPhy
+//     const testChe=getStudent.test.testChe
+//     const testMath=getStudent.test.testMath
 
   return (
     <div>
       <div className="stud-details-main-card">
         <div className="stud-details-main-card-left">
             <div className="stud-dp"><img src={getStudent.photo} alt="" /></div>
-            <h4 className='stud-name'>{getStudent.name}</h4>
+            <h2 className='stud-name'>{getStudent.name}</h2>
             <p className='stud-id'>{getStudent.studentid}</p>
             <div className="stud-edit">
                     <Link className='stud-edit-btn'>Edit</Link>
@@ -80,32 +86,33 @@ const StudentDetails = () => {
                </tr>
                <tr>
                     <th className='stud-details-th'>Attendance</th>
-                    <td className='stud-details-td'>: {attentantace}%</td>
+                    <td className='stud-details-td'>:  {attentantace!==""?`${attentantace}%`:'Loading...'}</td>
                </tr>
                <tr>
                     <th className='stud-details-th'>Internal Marks</th>
-                    {/* <td className='stud-details-td'>: Che - {getStudent.internal.internalChe}</td> */}
+                    <td className='stud-details-td'>: Che - {getStudent?.internal?.internalChe}</td>
                </tr>
-               <tr>
-                    <th className='stud-details-th'></th>
-                    {/* <td className='stud-details-td'>: Phy - {getStudent.internal.internalPhy}</td> */}
-               </tr>
-               <tr>
-                    <th className='stud-details-th'></th>
-                    {/* <td className='stud-details-td'>: Math - {getStudent.internal.internalMath}</td> */}
-               </tr>
-               <tr>
-                    <th className='stud-details-th'>Test Marks</th>
-                    {/* <td className='stud-details-td'>: Che - {getStudent.test.testChe}</td> */}
-               </tr>
-               <tr>
-                    <th className='stud-details-th'></th>
-                    {/* <td className='stud-details-td'>: Phy - {getStudent.test.testPhy}</td> */}
-               </tr>
-               <tr>
-                    <th className='stud-details-th'></th>
-                    {/* <td className='stud-details-td'>: Math - {getStudent.test.testMath}</td> */}
-               </tr>
+
+<tr>
+     <td></td>
+    <td className='stud-details-td'>: Phy - {getStudent?.internal?.internalPhy}</td>
+</tr>
+<tr>
+     <td></td>
+    <td className='stud-details-td'>: Math - {getStudent?.internal?.internalMath}</td>
+</tr>
+<tr>
+    <th className='stud-details-th'>Test Marks</th>
+    <td className='stud-details-td'>: Che - {getStudent?.test?.testChe}</td>
+</tr>
+<tr>
+     <td></td>
+    <td className='stud-details-td'>: Phy - {getStudent?.test?.testPhy}</td>
+</tr>
+<tr>
+     <td></td>
+    <td className='stud-details-td'>: Math - {getStudent?.test?.testMath}</td>
+</tr>
 
             </table>
         </div>
