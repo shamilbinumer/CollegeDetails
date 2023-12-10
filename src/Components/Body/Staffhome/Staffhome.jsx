@@ -29,7 +29,7 @@ const Logout = () => {
     // <div className=''><Link className='staffhome-back-btn'><i className="fa fa-angle-left" aria-hidden="true"></i>Back</Link></div>
     <div>
      <div className="upper">
-      <div className="upper-left"><div className=''><Link className='staffhome-back-btn'><i className="fa fa-angle-left" aria-hidden="true"></i>Back</Link></div></div>
+      <div className="upper-left"><div className=''><Link className='staffhome-back-btn' to='/stafflogin'><i className="fa fa-angle-left" aria-hidden="true"></i>Back</Link></div></div>
       <div className="upper-right">
       <div className="mmm"><div className="admin-logoutt"><div className='span'><span><i className="fa fa-user" aria-hidden="true"></i>{username}</span></div><div><button className="Btn" onClick={Logout}>
   

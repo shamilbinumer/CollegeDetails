@@ -2,7 +2,7 @@ import admin_schema from './admin.model.js'
 import staff_schema from './staff.model.js'
 import student_schema from './students.model.js'
 import bcrypt from 'bcrypt'
-import jsonwebtoken from 'jsonwebtoken'
+// import jsonwebtoken from 'jsonwebtoken'
 import pkg from "jsonwebtoken";
 const {sign}=pkg
 
@@ -192,4 +192,15 @@ export async function getStudentDetails(req,res){
     let task=await student_schema.findOne({_id:id})
     console.log(task);
     res.status(200).send(task)
+}
+
+export async function EditStudentDetails(req, res) {
+    const { id } = req.params;
+    try {
+        const updatedData = req.body;
+        const value = await student_schema.updateOne({ _id: id }, { $set: updatedData });
+        res.status(200).send(value);
+    } catch (error) {
+        res.status(404).send(error);
+    }
 }

@@ -1,11 +1,11 @@
 import './App.css'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
-import Navbar from './Components/Navbar/Navbar'
+// import Navbar from './Components/Navbar/Navbar'
 import Home from './Components/Body/Home/Home'
 import AdminLogin from './Components/Body/AdminLogin/AdminLogin'
 import StaffLogin from './Components/Body/StaffLogin/StaffLogin'
 import StaffReg from './Components/Body/StaffReg/StaffReg'
-import Adminpannel from './Components/Body/Adminpannel/Adminpannel'
+// import Adminpannel from './Components/Body/Adminpannel/Adminpannel'
 import Adminreg from './Components/Body/Adminreg/Adminreg'
 import Adminhome from './Components/Body/Adminhome/Adminhome'
 import Studentreg from './Components/Body/Studentreg/Studentreg'
@@ -18,6 +18,8 @@ import StaffForgotusername from './Components/staffForgoteusername/StaffForgotus
 import StaffForgotPwd from './Components/StaffForgotPwd/StaffForgotPwd'
 import ViewFullStudents from './Components/ViewFullStudents/ViewFullStudents'
 import StudentDetails from './Components/Body/StudentDetails/StudentDetails'
+import StudentEdit from './Components/StudentEdit/StudentEdit'
+import MainPage from './Components/MainPage/MainPage'
 
 function App() {
   return (
@@ -25,13 +27,12 @@ function App() {
     <BrowserRouter>
     {/* <Navbar/> */}
     <Routes>
-        
+      <Route path='/' Component={MainPage}/>
       <Route path='/admin' Component={Home}/>
       <Route path='/adminlogin' Component={AdminLogin}/>
       <Route path='/stafflogin' Component={StaffLogin}/>
       <Route path='/staffreg' Component={StaffReg}/>
       <Route path='/adminregister' Component={Adminreg}/>
-      <Route path='/adminpannel' Component={Adminpannel}/>
       <Route path='/adminhome' Component={Adminhome}/>
       <Route path='/studentreg' Component={Studentreg}/>
       <Route path='/studentlogin' Component={Studentlogin}/>
@@ -43,6 +44,7 @@ function App() {
       <Route path='/staffforgotpwd' Component={StaffForgotPwd}/>
       <Route path='/viewfullstudents' Component={ViewFullStudents}/>
       <Route path='/studentdetails/:id' Component={StudentDetails}/>
+      <Route path='/studentedit/:id' Component={StudentEdit}/>
 
     </Routes>
     

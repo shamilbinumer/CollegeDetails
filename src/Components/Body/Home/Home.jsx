@@ -20,7 +20,7 @@ const Home = () => {
           <h3>Account Type</h3>
           <div className='home-btns'><Link className="home-admin-btn" to='/adminlogin'>Admin</Link></div>
           <div className='home-btns'><Link className="home-staff-btn" to='/stafflogin'>Staff</Link></div>
-          <div><Link className="home-student-btn" to='/studentreg'>Student</Link></div>
+          {/* <div><Link className="home-student-btn" to='/studentreg'>Student</Link></div> */}
         </div>
       </div>
     </div>
