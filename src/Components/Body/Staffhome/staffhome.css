@@ -1,6 +1,6 @@
-body{
+/* body{
   padding-top: 10px;
-}
+} */
 .staffhome-back-btn{
   color: #2e3047;
   text-decoration: none;
@@ -13,6 +13,7 @@ body{
 }
 .upper{
   display: flex;
+  padding-top: 10px;
 }
 .upper-left{
   padding-top: 10px;

@@ -16,6 +16,7 @@ router.route("/getallstuds").get(controller.getStudents)
 router.route("/deletestudent/:id").delete(controller.deleteStudent);
 router.route("/getstudentdetails/:id").post(controller.getStudentDetails);
 router.route("/editstudentdetails/:id").patch(controller.EditStudentDetails);
+router.route("/studentlogin").post(controller.StudentLogin);
 
 
 export default router;

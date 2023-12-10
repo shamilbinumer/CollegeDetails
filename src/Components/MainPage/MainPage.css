@@ -1,0 +1,19 @@
+body{
+    scroll-behavior: smooth;
+}
+.home-banner{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.746),rgba(0, 0, 0, 0.748)),url(../../../public/young-girl-reading-textbook.jpg);
+    height: 91vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.courses-main{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.746),rgba(0, 0, 0, 0.748)),url(../../../public/group-students-posing-with-notepads.jpg);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 500px;
+}

@@ -204,3 +204,26 @@ export async function EditStudentDetails(req, res) {
         res.status(404).send(error);
     }
 }
+
+export async function StudentLogin(req, res) {
+    try {
+      console.log(req.body);
+      const { studentid, dob } = req.body;
+      const user = await student_schema.findOne({ studentid });
+        console.log(user);
+        if (!user) {
+        return res.status(404).send("User not found");
+      }
+        if (dob !== user.dob) {
+        return res.status(401).send("Incorrect date of birth");
+      }
+        const token = sign({ studentid }, process.env.JWT_KEY, { expiresIn: "24h" });
+        console.log(token);
+        res.status(200).send({ msg: "Successfully logged in", token });
+        } catch (error) {
+      console.error(error);
+      res.status(500).send("Internal Server Error");
+    }
+  }
+  
+

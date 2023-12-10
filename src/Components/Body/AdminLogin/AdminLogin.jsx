@@ -28,7 +28,7 @@ const Login=async(e)=>{
       const token=data.token
       localStorage.setItem("token",JSON.stringify(token))
       localStorage.setItem("username", JSON.stringify(username));
-      navigate("/adminhome",{state:{username}})
+      navigate("/adminhome")
     }
   } catch (error) {
     alert("cant't Login",error)
