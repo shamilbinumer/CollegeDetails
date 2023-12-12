@@ -30,15 +30,15 @@ const dob=useRef()
             studentid: studentid.current.value,
             dob: dob.current.value,
           });
-      
+    
           const data = res.data;
           console.log(data);
-      
           if (res.status >= 200 && res.status < 300) {
             const token = data.token;
             localStorage.setItem("token", JSON.stringify(token));
-            alert("Loged In Seccuss Fully")
-            navigate(`/studenthome`);
+            const userId = data._id;
+            alert("Logged In Successfully");
+            navigate(`/studenthome/${userId}`);
           } else {
             console.error("Login failed with status code:", res.status);
             alert("Can't login. Check console for details.");

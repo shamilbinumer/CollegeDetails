@@ -4,17 +4,25 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import './StudentHome.scss'
 
 const StudentHome = () => {
+  const [getStudent, setStudent] = useState([]);
+  const [attentantace, setAttentantace] = useState();
   const navigate=useNavigate()
     const {id}=useParams()
 
-    // const GetStudent=async()=>{
-    //     const res=await axios.post(`http://localhost:3041/college/getstudentdetails/${id}`)
-    //     console.log(res.data);
-    // }
+    const fullData = async () => {
+      try {
+          const res = await axios.post(`http://localhost:3041/college/getStudentdetails/${id}`);
+          setStudent(res.data);
+          console.log(res.data); 
+          // getpersantage(); 
+      } catch (error) {
+          alert("error",error)
+      }
+  }
 
-    // useEffect(()=>{
-    //     GetStudent()
-    // },[])
+  useEffect(() => {
+      fullData(id);
+  }, [id]);
 
     // const GetName=()=>{
     //     const key = localStorage.key(0);
@@ -67,7 +75,7 @@ const StudentHome = () => {
   <div className="text">Logout</div>
 </button></div></div></div>
       </div>
-     </div>
+</div>
         <div className="details-main-card">
           <div className="details-main-card-left">
             <div className="stud-dp"></div>
