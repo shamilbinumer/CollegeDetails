@@ -45,7 +45,7 @@ const dob=useRef()
         try {
           const res = await axios.post("http://localhost:3041/college/studentlogin", {
             studentid: studentid.current.value,
-            dob: dob.current.value,
+            dob: dob.current.value, 
           });
       
           const data = res.data;
