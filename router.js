@@ -1,10 +1,12 @@
 import { Router } from "express";
+import Auth from "./src/Components/MainPage/Auth.js";
 import * as controller from "./controller.js"
 const router=Router();
 router.route("/addadmin").post(controller.addAdmin);
 router.route("/adminlogin").post(controller.adminLogin);
 router.route("/addstaff").post(controller.addStaff);
 router.route("/stafflogin").post(controller.staffLogin);
+router.route("/home").get(Auth,controller.home);
 router.route("/getfullstaff").get(controller.getFullstaff);
 router.route("/getDetails/:id").post(controller.getfullDetails);
 router.route("/deletestaff/:id").delete(controller.deleteStaff);

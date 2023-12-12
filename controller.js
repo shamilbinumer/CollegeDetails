@@ -205,6 +205,18 @@ export async function EditStudentDetails(req, res) {
     }
 }
 
+export async function home(req,res)
+{
+  try {
+    console.log(req.user);
+    const name=req.user.usr.name
+    console.log(name);
+    res.status(200).send({msg:`${name}`})
+  } catch (error) {
+    res.status(404).send(error)
+  }
+}
+
 export async function StudentLogin(req, res) {
     try {
       console.log(req.body);

@@ -46,7 +46,7 @@ function App() {
       <Route path='/viewfullstudents' Component={ViewFullStudents}/>
       <Route path='/studentdetails/:id' Component={StudentDetails}/>
       <Route path='/studentedit/:id' Component={StudentEdit}/>
-      <Route path='/studenthome' Component={StudentHome}/>
+      <Route path='/studenthome/' Component={StudentHome}/>
 
     </Routes>
     

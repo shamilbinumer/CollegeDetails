@@ -22,30 +22,12 @@ const dob=useRef()
         setShowLoginForm(false);
       };
 
-      // const Login=async(e)=>{
-      //   e.preventDefault()
-      //   try {
-      //     const res=await axios.post("http://localhost:3041/college/studentlogin",{studentid:studentid.current.value,dob:dob.current.value})
-      //     const data=res.data;
-      //     console.log(data);
-      //     if(res.status!==404){
-      //       const token=data.token
-      //       localStorage.setItem("token",JSON.stringify(token))
-      //       localStorage.setItem("studentid", JSON.stringify(studentid));
-      //       alert("successfully logined")
-      //       navigate("/")
-      //     }
-      //   } catch (error) {
-      //     alert("cant't Login",error)
-      //   }
-      // }
-
       const Login = async (e) => {
         e.preventDefault();
         try {
           const res = await axios.post("http://localhost:3041/college/studentlogin", {
             studentid: studentid.current.value,
-            dob: dob.current.value, 
+            dob: dob.current.value,
           });
       
           const data = res.data;
@@ -54,9 +36,7 @@ const dob=useRef()
           if (res.status >= 200 && res.status < 300) {
             const token = data.token;
             localStorage.setItem("token", JSON.stringify(token));
-            localStorage.setItem("studentid", JSON.stringify(studentid.current.value));
-            alert("Successfully logged in");
-            navigate("/studenthome ");
+            navigate(`/studenthome?id=${studentid.current.value}`);
           } else {
             console.error("Login failed with status code:", res.status);
             alert("Can't login. Check console for details.");
@@ -66,6 +46,7 @@ const dob=useRef()
           alert("Can't login. Check console for details.");
         }
       };
+      
       
 
 
@@ -447,14 +428,6 @@ const dob=useRef()
                 background-color: #F9F9F9;
               }
          `
-        //  const pushData=(e)=>{
-        //   console.log(e.target.name);
-        //   // setVal((pre)=>{return({...pre,[e.target.name]:e.target.value})})
-        //   console.log('====================================');
-        //   console.log(studentid.current.value);
-        //   console.log('====================================');
-        //   console.log(dob.current.value);
-        //  }
   return (
     <Pakage>
     <Navbar>
