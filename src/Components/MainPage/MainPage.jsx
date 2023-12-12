@@ -1,13 +1,14 @@
 import React, { useRef, useState } from 'react'
 import './MainPage.css'
 import styled from 'styled-components'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 // import { useHistory } from 'react-router';
 
 
 
 const MainPage = () => {
+  const {id}=useParams()
     const navigate=useNavigate()
 
 const studentid=useRef()
@@ -37,7 +38,7 @@ const dob=useRef()
             const token = data.token;
             localStorage.setItem("token", JSON.stringify(token));
             alert("Loged In Seccuss Fully")
-            navigate(`/studenthome`);
+            // navigate(`/studenthome`);
           } else {
             console.error("Login failed with status code:", res.status);
             alert("Can't login. Check console for details.");
@@ -88,10 +89,11 @@ const dob=useRef()
       }
       .login-btn{
         background-color: #ffa41c;
-        padding: 7px 30px;
+        padding: 7px;
+        width: 70px;
         margin-right: 10px;
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: 5px;
         color: #3f2705;
         font-weight: 800;
       }
@@ -458,7 +460,7 @@ const dob=useRef()
       </ul>
     </div>
   </div>
-  <Link onClick={handleClick} className='login-btn'>SignIn</Link>
+  <Link onClick={handleClick} className='login-btn'>Sign In</Link>
   
 </nav>
     </Navbar>
@@ -474,7 +476,7 @@ const dob=useRef()
     <div className="field">
       <input id="dob" placeholder="Date Of Birth" ref={dob} className="input-field" name="dob" type="text"  />
     </div>
-    <button className="btn" type="submit">Sign In</button>
+    <Link to={`/studenthome`}><button className="btn" type="submit" onClick={Login}>Sign In</button></Link>
     <div><Link className='login-back' onClick={BackToMainPage}>Back</Link></div> 
   </form>
 </div>

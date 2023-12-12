@@ -1,0 +1,40 @@
+.studenthome{
+    .details-main-card{
+        width: 50%;
+        margin: auto;
+        min-height: 500px;
+        border: 2px solid #53d3d1;
+        margin-top: 5%;
+        border-radius: 5px;
+        display: flex;
+        padding: 10px;
+    }
+    .details-main-card-left{
+        width: 40%;
+        border-right: 1px solid #53d3d182;
+        padding-top: 7%;
+        // background-color: yellow;
+    }
+    .details-main-card-right{
+        width: 60%;
+        padding-left: 10px;
+        color: #53d3d1;
+        // background-color: rgb(124, 124, 27);
+    }
+    .stud-dp{
+        height: 200px;
+        width: 200px;
+        background-color: white;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .name{
+        text-align: center;
+        margin-top: 5%;
+        color: #53d3d1;
+    }
+    .id{
+        text-align: center;
+        color: #53d3d1;
+    }
+}
