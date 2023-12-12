@@ -4,7 +4,7 @@
         margin: auto;
         min-height: 500px;
         border: 2px solid #53d3d1;
-        margin-top: 5%;
+        margin-top: 1%;
         border-radius: 5px;
         display: flex;
         padding: 10px;
@@ -17,9 +17,12 @@
     }
     .details-main-card-right{
         width: 60%;
-        padding-left: 10px;
+        padding-left: 20px;
         color: #53d3d1;
         // background-color: rgb(124, 124, 27);
+    }
+    .stud-details-th{
+        width: 210px;
     }
     .stud-dp{
         height: 200px;

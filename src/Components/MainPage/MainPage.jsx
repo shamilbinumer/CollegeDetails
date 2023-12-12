@@ -38,7 +38,7 @@ const dob=useRef()
             const token = data.token;
             localStorage.setItem("token", JSON.stringify(token));
             alert("Loged In Seccuss Fully")
-            // navigate(`/studenthome`);
+            navigate(`/studenthome`);
           } else {
             console.error("Login failed with status code:", res.status);
             alert("Can't login. Check console for details.");
@@ -476,7 +476,7 @@ const dob=useRef()
     <div className="field">
       <input id="dob" placeholder="Date Of Birth" ref={dob} className="input-field" name="dob" type="text"  />
     </div>
-    <Link to={`/studenthome`}><button className="btn" type="submit" onClick={Login}>Sign In</button></Link>
+    <Link to={`/studenthome`}><button className="btn" type="submit">Sign In</button></Link>
     <div><Link className='login-back' onClick={BackToMainPage}>Back</Link></div> 
   </form>
 </div>
@@ -636,7 +636,7 @@ const dob=useRef()
     </div>
   <div className="row">
     <div className="col-md-12 copy">
-      <p className="text-center">&copy; Copyright 2018 - ISS Arts.  All rights reserved.</p>
+      <p className="text-center">copy Copyright 2018 - ISS Arts & Sceince College.  All rights reserved.</p>
     </div>
   </div>
 
