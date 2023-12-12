@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './MainPage.css'
 import styled from 'styled-components'
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,36 +9,64 @@ import axios from 'axios';
 
 const MainPage = () => {
     const navigate=useNavigate()
-const [studentid,setStudentid]=useState('')
-const [dob,setDob]=useState('')
 
+const studentid=useRef()
+const dob=useRef()
     const [showLoginForm, setShowLoginForm] = useState(false);
 
     const handleClick = () => {
       setShowLoginForm(!showLoginForm);
-    };
+    };  
 
     const BackToMainPage = () => {
         setShowLoginForm(false);
       };
 
-      const Login=async(e)=>{
-        e.preventDefault()
+      // const Login=async(e)=>{
+      //   e.preventDefault()
+      //   try {
+      //     const res=await axios.post("http://localhost:3041/college/studentlogin",{studentid:studentid.current.value,dob:dob.current.value})
+      //     const data=res.data;
+      //     console.log(data);
+      //     if(res.status!==404){
+      //       const token=data.token
+      //       localStorage.setItem("token",JSON.stringify(token))
+      //       localStorage.setItem("studentid", JSON.stringify(studentid));
+      //       alert("successfully logined")
+      //       navigate("/")
+      //     }
+      //   } catch (error) {
+      //     alert("cant't Login",error)
+      //   }
+      // }
+
+      const Login = async (e) => {
+        e.preventDefault();
         try {
-          const res=await axios.post("http://localhost:3041/college/studentlogin",{studentid:studentid,dob:dob})
-          const data=res.data;
+          const res = await axios.post("http://localhost:3041/college/studentlogin", {
+            studentid: studentid.current.value,
+            dob: dob.current.value,
+          });
+      
+          const data = res.data;
           console.log(data);
-          if(res.status!==404){
-            const token=data.token
-            localStorage.setItem("token",JSON.stringify(token))
-            localStorage.setItem("studentid", JSON.stringify(studentid));
-            alert("success fully logined")
-            navigate("/")
+      
+          if (res.status >= 200 && res.status < 300) {
+            const token = data.token;
+            localStorage.setItem("token", JSON.stringify(token));
+            localStorage.setItem("studentid", JSON.stringify(studentid.current.value));
+            alert("Successfully logged in");
+            navigate("/studenthome ");
+          } else {
+            console.error("Login failed with status code:", res.status);
+            alert("Can't login. Check console for details.");
           }
         } catch (error) {
-          alert("cant't Login",error)
+          console.error("Login error:", error);
+          alert("Can't login. Check console for details.");
         }
-      }
+      };
+      
 
 
 
@@ -419,6 +447,14 @@ const [dob,setDob]=useState('')
                 background-color: #F9F9F9;
               }
          `
+        //  const pushData=(e)=>{
+        //   console.log(e.target.name);
+        //   // setVal((pre)=>{return({...pre,[e.target.name]:e.target.value})})
+        //   console.log('====================================');
+        //   console.log(studentid.current.value);
+        //   console.log('====================================');
+        //   console.log(dob.current.value);
+        //  }
   return (
     <Pakage>
     <Navbar>
@@ -459,10 +495,10 @@ const [dob,setDob]=useState('')
   <h4 className="title">Student Sign In!</h4>
   <form onSubmit={Login}>
     <div className="field">
-      <input id="studentis" placeholder="Admission ID" className="input-field" name="studentid" type="text" onChange={(e)=>setStudentid(e.target.value)} />
+      <input id="studenti" placeholder="Admission ID" ref={studentid}  className="input-field" name="studentid" type="text"/>
     </div>
     <div className="field">
-      <input id="dob" placeholder="Date Of Birth" className="input-field" name="dob" type="text" onChange={(e)=>setDob(e.target.value)}  />
+      <input id="dob" placeholder="Date Of Birth" ref={dob} className="input-field" name="dob" type="text"  />
     </div>
     <button className="btn" type="submit">Sign In</button>
     <div><Link className='login-back' onClick={BackToMainPage}>Back</Link></div> 
@@ -624,7 +660,7 @@ const [dob,setDob]=useState('')
     </div>
   <div className="row">
     <div className="col-md-12 copy">
-      <p className="text-center">&copy; Copyright 2018 - ISS Arts & Science College.  All rights reserved.</p>
+      <p className="text-center">&copy; Copyright 2018 - ISS Arts.  All rights reserved.</p>
     </div>
   </div>
 

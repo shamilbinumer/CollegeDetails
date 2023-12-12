@@ -20,6 +20,7 @@ import ViewFullStudents from './Components/ViewFullStudents/ViewFullStudents'
 import StudentDetails from './Components/Body/StudentDetails/StudentDetails'
 import StudentEdit from './Components/StudentEdit/StudentEdit'
 import MainPage from './Components/MainPage/MainPage'
+import StudentHome from './Components/StudentHome/StudentHome'
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
       <Route path='/viewfullstudents' Component={ViewFullStudents}/>
       <Route path='/studentdetails/:id' Component={StudentDetails}/>
       <Route path='/studentedit/:id' Component={StudentEdit}/>
+      <Route path='/studenthome' Component={StudentHome}/>
 
     </Routes>
     
