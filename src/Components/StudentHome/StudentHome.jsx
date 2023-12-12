@@ -10,7 +10,7 @@ const StudentHome = () => {
   const FullData = async () => {
     try {
       const res = await axios.get(`http://localhost:3041/college/getdetsilsloginedstudent/${studentid}`);
-      console.log(res.data.name);
+      console.log(res);
       setStudent(res.data);
       console.log(student.name);
     } catch (error) {
@@ -20,7 +20,7 @@ const StudentHome = () => {
 
   useEffect(() => {
     FullData(studentid);
-  }, [studentid]);
+  }, []);
 
 
     // const GetName=()=>{
