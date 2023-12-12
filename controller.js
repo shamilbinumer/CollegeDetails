@@ -237,5 +237,12 @@ export async function StudentLogin(req, res) {
       res.status(500).send("Internal Server Error");
     }
   }
+
+  export async function GetDtsilsLoginedStudent(req,res){
+    const{studentid}=req.params;
+    let task=await student_schema.findOne({studentid:studentid})
+    console.log(task);
+    res.status(200).send(task)
+}
   
 

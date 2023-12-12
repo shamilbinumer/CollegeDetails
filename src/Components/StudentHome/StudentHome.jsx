@@ -4,25 +4,24 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import './StudentHome.scss'
 
 const StudentHome = () => {
-  const [getStudent, setStudent] = useState([]);
-  const [attentantace, setAttentantace] = useState();
   const navigate=useNavigate()
-    const {id}=useParams()
-
-    const fullData = async () => {
-      try {
-          const res = await axios.post(`http://localhost:3041/college/getStudentdetails/${id}`);
-          setStudent(res.data);
-          console.log(res.data); 
-          // getpersantage(); 
-      } catch (error) {
-          alert("error",error)
-      }
-  }
+  const [student,setStudent]=useState([])
+  const {studentid}=useParams()
+  const FullData = async () => {
+    try {
+      const res = await axios.get(`http://localhost:3041/college/getdetsilsloginedstudent/${studentid}`);
+      console.log(res.data.name);
+      setStudent(res.data);
+      console.log(student.name);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
   useEffect(() => {
-      fullData(id);
-  }, [id]);
+    FullData(studentid);
+  }, [studentid]);
+
 
     // const GetName=()=>{
     //     const key = localStorage.key(0);
