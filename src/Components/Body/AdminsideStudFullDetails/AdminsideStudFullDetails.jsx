@@ -51,7 +51,7 @@ const AdminsideStudFullDetails = () => {
   return (
     <div>
            <div className="upper">
-      <div className="upper-left"><div className=''><Link className='staffhome-back-btn' to='/staffhome'><i className="fa fa-angle-left" aria-hidden="true"></i>Back</Link></div></div>
+      <div className="upper-left"><div className=''><Link className='staffhome-back-btn' to='/adminsidefullstudent'><i className="fa fa-angle-left" aria-hidden="true"></i>Back</Link></div></div>
       <div className="upper-right">
       <div className="mmm"><div className="admin-logoutt"><div className='span'><span><i className="fa fa-user" aria-hidden="true"></i>{username}</span></div><div><button className="Btn" onClick={Logout}>
   
