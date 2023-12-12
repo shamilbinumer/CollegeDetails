@@ -36,7 +36,8 @@ const dob=useRef()
           if (res.status >= 200 && res.status < 300) {
             const token = data.token;
             localStorage.setItem("token", JSON.stringify(token));
-            navigate(`/studenthome?id=${studentid.current.value}`);
+            alert("Loged In Seccuss Fully")
+            navigate(`/studenthome`);
           } else {
             console.error("Login failed with status code:", res.status);
             alert("Can't login. Check console for details.");

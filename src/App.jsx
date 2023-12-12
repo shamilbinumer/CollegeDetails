@@ -21,6 +21,8 @@ import StudentDetails from './Components/Body/StudentDetails/StudentDetails'
 import StudentEdit from './Components/StudentEdit/StudentEdit'
 import MainPage from './Components/MainPage/MainPage'
 import StudentHome from './Components/StudentHome/StudentHome'
+import AdminSideStudentDetails from './Components/Body/AdminSideStudentDetails/AdminSideStudentDetails'
+import AdminsideStudFullDetails from './Components/Body/AdminsideStudFullDetails/AdminsideStudFullDetails'
 
 function App() {
   return (
@@ -46,7 +48,10 @@ function App() {
       <Route path='/viewfullstudents' Component={ViewFullStudents}/>
       <Route path='/studentdetails/:id' Component={StudentDetails}/>
       <Route path='/studentedit/:id' Component={StudentEdit}/>
-      <Route path='/studenthome/' Component={StudentHome}/>
+      <Route path='/studenthome' Component={StudentHome}/>
+      <Route path='/adminsidefullstudent' Component={AdminSideStudentDetails}/>
+      <Route path='/adminstudfulldetails/:id' Component={AdminsideStudFullDetails}/>
+
 
     </Routes>
     

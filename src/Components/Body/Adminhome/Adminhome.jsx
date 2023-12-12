@@ -54,7 +54,12 @@ const Adminhome = () => {
             </div>
           </div>
           <div className="admin-home-details-right">
-          <div className="view-full-students"></div>
+          <div className="view-full-staffs">
+              <Link className='view-all-staff-btn'>View All Students  <i className="fa fa-angle-right" aria-hidden="true"></i></Link>
+              <div className="adminhome-reg-staff-btn">
+              <Link to='/adminsidefullstudent' className='adminhome-reg-staff-button'>Click Here</Link>
+              </div>
+            </div>
           </div>
         </div>
         {/* <Link to='/staffreg'>Register staff</Link> */}
