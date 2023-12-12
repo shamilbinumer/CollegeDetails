@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import './StudentHome.scss'
 
 const StudentHome = () => {
+  const navigate=useNavigate()
     const {id}=useParams()
 
     // const GetStudent=async()=>{
@@ -49,7 +50,7 @@ const StudentHome = () => {
       const confirmed = window.confirm("Are you sure you want to log out?");
       if (confirmed) {
           localStorage.clear();
-          Navigate("/")
+          navigate("/")
       }
      
     };
@@ -57,7 +58,7 @@ const StudentHome = () => {
   return (
     <div className='studenthome'>
       <div className="upper">
-      <div className="upper-left"><div className=''><Link className='staffhome-back-btn' to='/staffhome'><i className="fa fa-angle-left" aria-hidden="true"></i>Back</Link></div></div>
+      <div className="upper-left"><div className=''></div></div>
       <div className="upper-right">
       <div className="mmm"><div className="admin-logoutt"><div className='span'><span><i className="fa fa-user" aria-hidden="true"></i>{username}</span></div><div><button className="Btn" onClick={Logout}>
   
