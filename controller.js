@@ -242,7 +242,7 @@ export async function StudentLogin(req, res) {
     const{studentid}=req.params;
     let task=await student_schema.findOne({studentid:studentid})
     console.log(task);
-    res.status(200).send(task)
+    res.status(200).send({task})
 }
   
 

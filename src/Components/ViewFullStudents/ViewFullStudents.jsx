@@ -20,9 +20,8 @@ const ViewFullStudents = () => {
       if (confirmed) {
           localStorage.clear();
           navigate("/admin")
-      }
-     
-    };
+    }
+};
 
     const getAllstud=async()=>{
         const res=await axios.get("http://localhost:3041/college/getallstuds")

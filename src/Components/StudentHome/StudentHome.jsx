@@ -5,12 +5,13 @@ import './StudentHome.scss'
 
 const StudentHome = () => {
   const navigate=useNavigate()
-  const [student,setStudent]=useState([])
+  const [student,setStudent]=useState({})
   const {studentid}=useParams()
+  console.log(studentid);
   const FullData = async () => {
     try {
       const res = await axios.get(`http://localhost:3041/college/getdetsilsloginedstudent/${studentid}`);
-      console.log(res);
+      // console.log(res.data);
       setStudent(res.data);
       console.log(student.name);
     } catch (error) {
@@ -19,31 +20,34 @@ const StudentHome = () => {
   };
 
   useEffect(() => {
-    FullData(studentid);
+    FullData();
+  }, [studentid]);
+
+
+  const GetName = () => {
+    const key = localStorage.key(0);
+    const value = JSON.parse(localStorage.getItem(key));
+
+    axios.get('http://localhost:3041/college/home', {
+      headers: {
+        Authorization: `Bearer ${value}`,
+      },
+    })
+      .then((response) => {
+        const { data } = response;
+        const { msg } = data;
+        document.getElementById("name").innerHTML = msg ? `${msg}` : "No message available";
+      })
+      .catch((error) => {
+        console.error("Axios error:", error);
+      });
+  };
+
+  useEffect(() => {
+    GetName();
   }, []);
 
 
-    // const GetName=()=>{
-    //     const key = localStorage.key(0);
-    //     const value = JSON.parse(localStorage.getItem(key));
-        
-    //     axios.get('http://localhost:3041/college/home', {
-    //       headers: {
-    //         Authorization: `Bearer ${value}`,
-    //       },
-    //     })
-    //       .then((response) => {
-    //         const { data } = response;
-    //         const { msg } = data;
-    //         document.getElementById("name").innerHTML = msg ? `${msg}` : "No message available";
-    //       })
-    //       .catch((error) => {
-    //         console.error("Axios error:", error);
-    //       });
-    // }
-    // useEffect(()=>{
-    //     GetName()
-    // },[])
     const [username, setUsername] = useState("");
 
     useEffect(() => {

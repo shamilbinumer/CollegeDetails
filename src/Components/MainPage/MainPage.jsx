@@ -8,7 +8,7 @@ import axios from 'axios';
 
 
 const MainPage = () => {
-  const {id}=useParams()
+  // const {id}=useParams()
     const navigate=useNavigate()
 
 const studentid=useRef()
@@ -34,6 +34,9 @@ const dob=useRef()
           const data = res.data;
           console.log(data);
           if (res.status >= 200 && res.status < 300) {
+            const { name, studentid } = data;
+            localStorage.setItem("name", JSON.stringify(name));
+            localStorage.setItem("studentid", JSON.stringify(studentid));
             const token = data.token;
             localStorage.setItem("token", JSON.stringify(token));
             // const userId = data._id;
