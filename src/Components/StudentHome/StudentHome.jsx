@@ -17,7 +17,7 @@ const StudentHome = () => {
       setStudent(res.data.task);
       console.log(res.data);
       console.log(res.data.task.name);
-    } catch (error) {
+    } catch (error) { 
       console.log('Error fetching data:', error); 
     }
   };
