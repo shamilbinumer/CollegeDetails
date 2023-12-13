@@ -219,18 +219,19 @@ export async function home(req,res)
 
 export async function StudentLogin(req, res) {
     try {
-      console.log(req.body);
+    
       const { studentid, dob } = req.body;
       const user = await student_schema.findOne({ studentid });
-        console.log(user);
+       console.log(user._id);
         if (!user) {
         return res.status(404).send("User not found");
       }
         if (dob !== user.dob) {
         return res.status(401).send("Incorrect date of birth");
       }
-        const token = sign({ studentid }, process.env.JWT_KEY, { expiresIn: "24h" });
-        console.log(token);
+      const{_id}=user
+        const token = sign({ _id }, process.env.JWT_KEY, { expiresIn: "30m" });
+        
         res.status(200).send({ msg: "Successfully logged in", token });
         } catch (error) {
       console.error(error);
@@ -239,10 +240,10 @@ export async function StudentLogin(req, res) {
   }
 
   export async function GetDtsilsLoginedStudent(req,res){
-    const{studentid}=req.params;
-    let task=await student_schema.findOne({studentid:studentid})
-    console.log(task);
-    res.status(200).send({task})
+
+         let task=await student_schema.findOne({_id:req.user._id})
+         console.log(task);
+         res.status(200).send({task})
 }
   
 

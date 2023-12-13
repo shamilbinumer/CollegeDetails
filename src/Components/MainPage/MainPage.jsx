@@ -32,16 +32,11 @@ const dob=useRef()
           });
     
           const data = res.data;
-          console.log(data);
           if (res.status >= 200 && res.status < 300) {
-            const { name, studentid } = data;
-            localStorage.setItem("name", JSON.stringify(name));
-            localStorage.setItem("studentid", JSON.stringify(studentid));
-            const token = data.token;
-            localStorage.setItem("token", JSON.stringify(token));
-            // const userId = data._id;
+            const stud_token = data.token;
+            localStorage.setItem("stud_token", JSON.stringify(stud_token));
             alert("Logged In Successfully");
-            navigate(`/studenthome/${res.data.studentid}`);
+            navigate('./studenthome')
           } else {
             console.error("Login failed with status code:", res.status);
             alert("Can't login. Check console for details.");
@@ -472,14 +467,14 @@ const dob=useRef()
         <LoginForm>
         <div className="card">
   <h4 className="title">Student Sign In!</h4>
-  <form onSubmit={Login}>
+  <form>
     <div className="field">
       <input id="studenti" placeholder="Admission ID" ref={studentid}  className="input-field" name="studentid" type="text"/>
     </div>
     <div className="field">
       <input id="dob" placeholder="Date Of Birth" ref={dob} className="input-field" name="dob" type="text"  />
     </div>
-    <Link to={`/studenthome`}><button className="btn" type="submit">Sign In</button></Link>
+    <Link><button onClick={Login} className="btn" type="submit">Sign In</button></Link>
     <div><Link className='login-back' onClick={BackToMainPage}>Back</Link></div> 
   </form>
 </div>

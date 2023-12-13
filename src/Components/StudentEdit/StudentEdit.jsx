@@ -119,7 +119,7 @@ const StudentEdit = () => {
   const Edit=async(e)=>{
     e.preventDefault()
    try {
-    const res=await axios.patch(`http://localhost:3041/college/editstudentdetails/${id}`,{...val,photo:Photo,staff:username})
+    const res=await axios.patch(`http://localhost:3041/college/editstudentdetails/${id}`,{...val,staff:username})
     console.log(res.data);
     if(res.status!==404){
       success();
