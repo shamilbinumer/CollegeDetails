@@ -513,7 +513,8 @@ const dob=useRef()
          
             </div>
             <div className="ul"></div>
-          <div className="icons">
+        <div className="dddd">
+        <div className="icons">
             <div className='icons-sub'>
             <div><i className="fa fa-building" aria-hidden="true"></i></div>
             <div className='icons-sub'>Management & <br/>Governance</div>
@@ -527,6 +528,7 @@ const dob=useRef()
             <div className='icons-sub'>Principal's<br/>Message</div>
             </div>
           </div>
+        </div>
       </section>
 </About>
 

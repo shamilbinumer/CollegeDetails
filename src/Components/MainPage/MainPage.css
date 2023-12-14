@@ -17,3 +17,49 @@ body{
     background-attachment: fixed;
     height: 500px;
 }
+@media(min-width:300px) and (max-width:575.98px){
+    .home-banner{
+        height: 400px;
+    }
+    .banner-content{
+        width: 90% !important;
+    }
+    .banner-content p{
+        font-size: 10px;
+    }
+    .banner-content h1{
+        font-size: 20px !important;
+       }
+       .about-main-div{
+        display: inline !important;
+       }
+       .about-left{
+        text-align: center;
+      }
+      .dddd{
+        text-align: center;
+      }
+      .icons{
+        text-align: center;
+        margin-top: 1% !important;
+        display: inline !important;
+        justify-content: center;
+        align-items: center;
+        gap: 90px;
+      }
+      .icons-sub{
+        margin-top: 20px !important;
+        display: inline !important;
+        /* align-items: center; */
+      }
+      .icons-sub i{
+        background-color: #7c4e09;
+        padding: 13px;
+        font-size: 20px;
+        border-radius: 50%;
+        color: #ffffff;
+      }
+      .icons-sub{
+        font-weight: 600;
+      }
+}

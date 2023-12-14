@@ -7,14 +7,14 @@ const StudentDetails = () => {
      const navigate=useNavigate()
     const { id } = useParams();
     const [getStudent, setStudent] = useState([]);
-    const [attentantace, setAttentantace] = useState();
+//     const [attentantace, setAttentantace] = useState(0);
 
     const fullData = async () => {
         try {
             const res = await axios.post(`http://localhost:3041/college/getStudentdetails/${id}`);
             setStudent(res.data);
             console.log(res.data); 
-            getpersantage(); 
+            getpersantage();
         } catch (error) {
             console.log(error);
         }
@@ -22,15 +22,16 @@ const StudentDetails = () => {
 
     useEffect(() => {
         fullData(id);
-    }, [id]);
+       
+    },[id]);
 
-    const getpersantage = () => {
-     if (getStudent.attandance !== "" && getStudent.attandance !== undefined) {
-         let pers = (getStudent.attandance / 200) * 100;
-         setAttentantace(pers);
-         console.log(pers);
-     }
- };
+//     const getpersantage = () => {
+//      if (getStudent.attandance) {
+//          let pers = (getStudent.attandance / 200) * 100;
+//          setAttentantace(pers);
+         
+//      }
+//  };
 
  const [username, setUsername] = useState("");
 
@@ -116,7 +117,9 @@ const StudentDetails = () => {
                </tr>
                <tr>
                     <th className='stud-details-th'>Attendance</th>
-                    <td className='stud-details-td'>:  {attentantace!==""?`${attentantace}%`:'Loading...'}</td>
+                    {/* <td className='stud-details-td'>:  {attentantace?`${attentantace}%`:`${attentantace}%`}</td> */}
+                    <td className='stud-details-td'>: {((getStudent.attandance /200)*100)<75?`${((getStudent.attandance /200)*100)}% Must Pay Condonation`:`${((getStudent.attandance /200)*100)}%`}</td>
+
                </tr>
                <tr>
                     <th className='stud-details-th'>Internal Marks</th>
