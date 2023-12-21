@@ -92,7 +92,7 @@ const StudentHome = () => {
                <tr>
                     <th className='stud-details-th'>Attendance</th>
                     {/* {attentantace!==""?`${attentantace}%`:'Loading...'} */}
-                    <td className='stud-details-td'>:  {student.attandance}</td>
+                    <td className='stud-details-td'>: {((student.attandance /200)*100)<75?`${((student.attandance /200)*100)}% Must Pay Condonation`:`${((student.attandance /200)*100)}%`}</td>
                </tr>
                <tr>
    <th className='stud-details-th'>Internal Marks</th>
