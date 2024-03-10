@@ -298,6 +298,7 @@ const dob=useRef()
             }
             .list{
               display: flex;
+              flex-wrap: wrap;
               justify-content: center;
               color: #ffffff;
               /* background-color: yellow; */

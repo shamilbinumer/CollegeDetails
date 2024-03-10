@@ -62,4 +62,16 @@ body{
       .icons-sub{
         font-weight: 600;
       }
+      .list{
+        display: inline !important;
+        text-align: center !important;
+        /* background-color: red !important; */
+      }
+      .list p{
+        font-size: 10px !important;
+        width: 200px !important;
+      }
+      .list-sub{
+        margin: auto !important;
+      }
 }

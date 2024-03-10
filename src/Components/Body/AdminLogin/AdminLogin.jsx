@@ -46,6 +46,7 @@ const Login=async(e)=>{
             <button onClick={Login} >Login</button>
             <div className='reg-btn'><Link to='/adminregister' className='regbtn'>Register</Link></div>
             </form>
+           <div className='goHome'> <Link to='/admin'>Go to Home</Link></div>
         </div>
       </div>
     </div>

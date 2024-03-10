@@ -23,13 +23,13 @@ const AdminsideStudFullDetails = () => {
         fullData(id);
     }, [id]);
 
-    const getpersantage = () => {
-     if (getStudent.attandance !== "" && getStudent.attandance !== undefined) {
-         let pers = (getStudent.attandance / 200) * 100;
-         setAttentantace(pers);
-         console.log(pers);
-     }
- };
+//     const getpersantage = () => {
+//      if (getStudent.attandance !== "" && getStudent.attandance !== undefined) {
+//          let pers = (getStudent.attandance / 200) * 100;
+//          setAttentantace(pers);
+//          console.log(pers);
+//      }
+//  };
 
  const [username, setUsername] = useState("");
 
@@ -106,32 +106,32 @@ const AdminsideStudFullDetails = () => {
                </tr>
                <tr>
                     <th className='stud-details-th'>Attendance</th>
-                    <td className='stud-details-td'>:  {attentantace!==""?`${attentantace}%`:'Loading...'}</td>
+                    <td className='stud-details-td'>: {((getStudent.attandance /200)*100)<75?`${((getStudent.attandance /200)*100)}% Must Pay Condonation`:`${((getStudent.attandance /200)*100)}%`}</td>
                </tr>
                <tr>
                     <th className='stud-details-th'>Internal Marks</th>
-                    <td className='stud-details-td'>: Che - {getStudent?.internal?.internalChe}</td>
+                    <td className='stud-details-td'>: Che - {getStudent?.internal?.internalChe} / 100</td>
                </tr>
 
 <tr>
      <td></td>
-    <td className='stud-details-td'>: Phy - {getStudent?.internal?.internalPhy}</td>
+    <td className='stud-details-td'>: Phy - {getStudent?.internal?.internalPhy} / 100</td>
 </tr>
 <tr>
      <td></td>
-    <td className='stud-details-td'>: Math - {getStudent?.internal?.internalMath}</td>
+    <td className='stud-details-td'>: Math - {getStudent?.internal?.internalMath} / 100</td>
 </tr>
 <tr>
     <th className='stud-details-th'>Test Marks</th>
-    <td className='stud-details-td'>: Che - {getStudent?.test?.testChe}</td>
+    <td className='stud-details-td'>: Che - {getStudent?.test?.testChe} / 100</td>
 </tr>
 <tr>
      <td></td>
-    <td className='stud-details-td'>: Phy - {getStudent?.test?.testPhy}</td>
+    <td className='stud-details-td'>: Phy - {getStudent?.test?.testPhy} / 100</td>
 </tr>
 <tr>
      <td></td>
-    <td className='stud-details-td'>: Math - {getStudent?.test?.testMath}</td>
+    <td className='stud-details-td'>: Math - {getStudent?.test?.testMath} / 100</td>
 </tr>
 
             </table>

@@ -6,7 +6,8 @@ import axios from 'axios'
 const StudentDetails = () => {
      const navigate=useNavigate()
     const { id } = useParams();
-    const [getStudent, setStudent] = useState([]);
+    const [getStudent, setStudent] = useState({});
+    const [username, setUsername] = useState("");
 //     const [attentantace, setAttentantace] = useState(0);
 
     const fullData = async () => {
@@ -14,7 +15,7 @@ const StudentDetails = () => {
             const res = await axios.post(`http://localhost:3041/college/getStudentdetails/${id}`);
             setStudent(res.data);
             console.log(res.data); 
-            getpersantage();
+          //   getpersantage();
         } catch (error) {
             console.log(error);
         }
@@ -25,15 +26,7 @@ const StudentDetails = () => {
        
     },[id]);
 
-//     const getpersantage = () => {
-//      if (getStudent.attandance) {
-//          let pers = (getStudent.attandance / 200) * 100;
-//          setAttentantace(pers);
-         
-//      }
-//  };
 
- const [username, setUsername] = useState("");
 
     useEffect(() => {
       const storedUsername = localStorage.getItem("username");
@@ -47,17 +40,10 @@ const StudentDetails = () => {
       if (confirmed) {
           localStorage.clear();
           navigate("/admin")
-      }
-     
-    };
+    }
+};
  
-//     const internalChe=getStudent.internal.internalChe
-//     const internalPhy=getStudent.internal.internalPhy
-//     const internalMath=getStudent.internal.internalMath
 
-//     const testPhy=getStudent.test.testPhy
-//     const testChe=getStudent.test.testChe
-//     const testMath=getStudent.test.testMath
 
   return (
     <div>
@@ -117,34 +103,34 @@ const StudentDetails = () => {
                </tr>
                <tr>
                     <th className='stud-details-th'>Attendance</th>
-                    {/* <td className='stud-details-td'>:  {attentantace?`${attentantace}%`:`${attentantace}%`}</td> */}
                     <td className='stud-details-td'>: {((getStudent.attandance /200)*100)<75?`${((getStudent.attandance /200)*100)}% Must Pay Condonation`:`${((getStudent.attandance /200)*100)}%`}</td>
+
 
                </tr>
                <tr>
                     <th className='stud-details-th'>Internal Marks</th>
-                    <td className='stud-details-td'>: Che - {getStudent?.internal?.internalChe}</td>
+                    <td className='stud-details-td'>: Che - {getStudent?.internal?.internalChe}/100</td>
                </tr>
 
 <tr>
      <td></td>
-    <td className='stud-details-td'>: Phy - {getStudent?.internal?.internalPhy}</td>
+    <td className='stud-details-td'>: Phy - {getStudent?.internal?.internalPhy} / 100</td>
 </tr>
 <tr>
      <td></td>
-    <td className='stud-details-td'>: Math - {getStudent?.internal?.internalMath}</td>
+    <td className='stud-details-td'>: Math - {getStudent?.internal?.internalMath} / 100</td>
 </tr>
 <tr>
     <th className='stud-details-th'>Test Marks</th>
-    <td className='stud-details-td'>: Che - {getStudent?.test?.testChe}</td>
+    <td className='stud-details-td'>: Che - {getStudent?.test?.testChe} / 100</td>
 </tr>
 <tr>
      <td></td>
-    <td className='stud-details-td'>: Phy - {getStudent?.test?.testPhy}</td>
+    <td className='stud-details-td'>: Phy - {getStudent?.test?.testPhy} / 100</td>
 </tr>
 <tr>
      <td></td>
-    <td className='stud-details-td'>: Math - {getStudent?.test?.testMath}</td>
+    <td className='stud-details-td'>: Math - {getStudent?.test?.testMath} / 100</td>
 </tr>
 
             </table>

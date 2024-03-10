@@ -124,7 +124,7 @@ const StudentEdit = () => {
     if(res.status!==404){
       success();
       setTimeout(()=>{
-        navigate("/staffhome");
+        navigate(`/studentdetails/${id}`);
 },3000);
      }
    } catch (error) {

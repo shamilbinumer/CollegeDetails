@@ -43,7 +43,7 @@ const StaffLogin = () => {
   },3000);
       }
     } catch (error) {
-      alert("cant't Login",error)
+      alert("Username or Pasword does not exist",error)
     }
   }
   return (
@@ -72,6 +72,7 @@ const StaffLogin = () => {
                             theme="dark"
               />
             </form>
+            <div className='goHome'> <Link to='/admin'>Go to Home</Link></div>
         </div>
       </div>
     </div>
